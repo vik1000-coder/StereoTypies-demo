@@ -30,6 +30,15 @@
       "kind": "static_public_demo",
       "path": "presentations/static-demo-session.json",
       "video_id": "static-robust-motion"
+    },
+    {
+      "id": "static-hard-negative-session",
+      "title": "Public static hard-negative demo",
+      "description": "Sanitized confounder presentation showing routed non-target motion without a target behavior episode.",
+      "pipeline": "long_form",
+      "kind": "static_public_demo",
+      "path": "presentations/static-hard-negative-session.json",
+      "video_id": "static-hard-negative"
     }
   ],
   "configs": [

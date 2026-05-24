@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "schema": "stereoscope.local_annotation",
+  "schema_version": "0.2.0",
+  "video_id": "static-hard-negative",
+  "session_id": "static_hard_negative",
+  "source_video_path": "assets/robust_hard_negative_motion.mp4",
+  "reviewer": "public_demo",
+  "status": "reviewed",
+  "notes": "Static public demo hard-negative annotation over a synthetic fixture.",
+  "updated_at": "2026-05-24T00:00:00Z",
+  "validation": {
+    "warning_count": 0,
+    "warnings": [],
+    "has_none": true,
+    "has_behavior": false,
+    "ready_for_eval": true
+  },
+  "intervals": [
+    {
+      "id": "static-hard-negative-none",
+      "label": "none",
+      "behavior_detail": "ordinary_activity_confounder",
+      "behavior_detail_title": "Ordinary activity confounder",
+      "start_time_sec": 0,
+      "end_time_sec": 8,
+      "note": "Synthetic non-target motion used as a public hard-negative example.",
+      "reviewer": "public_demo",
+      "source": "static_demo",
+      "source_behavior_id": null,
+      "source_video_id": "static-hard-negative"
+    }
+  ],
+  "source_suggestions": [],
+  "label_options": {
+    "schema_version": "0.2.0",
+    "temporal_labels": ["none", "flap", "other_repetitive"],
+    "behavior_details": [
+      { "id": "none_background", "title": "None/background", "label": "none" },
+      { "id": "ordinary_activity_confounder", "title": "Ordinary activity confounder", "label": "none" },
+      { "id": "hand_flapping", "title": "Hand/arm flapping", "label": "flap" },
+      { "id": "unclear_repetitive", "title": "Unclear repetitive behavior", "label": "other_repetitive" }
+    ],
+    "default_detail_by_label": {
+      "none": "none_background",
+      "flap": "hand_flapping",
+      "other_repetitive": "unclear_repetitive"
+    }
+  },
+  "storage": {
+    "annotation_path": "demo/annotations/static-hard-negative.json",
+    "export_path": "demo/annotations/static-hard-negative.json",
+    "revision_directory": "demo/annotations"
+  },
+  "export": {
+    "schema_version": "0.2.0",
+    "session_id": "static_hard_negative",
+    "intervals": [
+      { "schema_version": "0.2.0", "label": "none", "start_time_sec": 0, "end_time_sec": 8 }
+    ]
+  }
+}

@@ -8,6 +8,12 @@
         "subject_id": "subject_proxy",
         "video_path": "assets/robust_motion_positive.mp4",
         "annotation_path": "annotations/static-robust-motion.json"
+      },
+      {
+        "session_id": "static_hard_negative",
+        "subject_id": "subject_proxy",
+        "video_path": "assets/robust_hard_negative_motion.mp4",
+        "annotation_path": "annotations/static-hard-negative.json"
       }
     ]
   }

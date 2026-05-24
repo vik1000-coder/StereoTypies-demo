@@ -3,10 +3,10 @@
   "summary": {
     "video_count": 2,
     "status_counts": {
-      "reviewed": 1,
-      "not_started": 1
+      "reviewed": 2,
+      "not_started": 0
     },
-    "ready_for_eval_count": 1
+    "ready_for_eval_count": 2
   },
   "items": [
     {
@@ -31,18 +31,18 @@
       "video_id": "static-hard-negative",
       "label": "Synthetic hard-negative motion",
       "path": "assets/robust_hard_negative_motion.mp4",
-      "status": "not_started",
-      "reviewer": "",
-      "updated_at": null,
-      "interval_count": 0,
+      "status": "reviewed",
+      "reviewer": "public_demo",
+      "updated_at": "2026-05-24T00:00:00Z",
+      "interval_count": 1,
       "source_suggestion_count": 0,
-      "ready_for_eval": false,
+      "ready_for_eval": true,
       "validation": {
         "warning_count": 0,
         "warnings": [],
-        "has_none": false,
+        "has_none": true,
         "has_behavior": false,
-        "ready_for_eval": false
+        "ready_for_eval": true
       }
     }
   ]

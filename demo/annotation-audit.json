@@ -1,12 +1,12 @@
 {
   "schema_version": "0.2.0",
   "summary": {
-    "annotation_file_count": 1,
-    "export_file_count": 1,
+    "annotation_file_count": 2,
+    "export_file_count": 2,
     "revision_file_count": 0,
     "manifest_exists": true,
-    "manifest_session_count": 1,
-    "ready_for_eval_count": 1,
+    "manifest_session_count": 2,
+    "ready_for_eval_count": 2,
     "missing_export_count": 0,
     "missing_revision_count": 0,
     "invalid_file_count": 0,
@@ -31,6 +31,22 @@
         "export_path": "demo/annotations/static-robust-motion.json",
         "revision_directory": "demo/annotations"
       }
+    },
+    {
+      "video_id": "static-hard-negative",
+      "in_catalog": true,
+      "status": "reviewed",
+      "interval_count": 1,
+      "ready_for_eval": true,
+      "warning_count": 0,
+      "has_export": true,
+      "revision_count": 0,
+      "errors": [],
+      "storage": {
+        "annotation_path": "demo/annotations/static-hard-negative.json",
+        "export_path": "demo/annotations/static-hard-negative.json",
+        "revision_directory": "demo/annotations"
+      }
     }
   ],
   "orphan_exports": [],
@@ -38,7 +54,7 @@
   "manifest": {
     "path": "demo/heldout_session_manifest.json",
     "exists": true,
-    "session_count": 1,
+    "session_count": 2,
     "errors": []
   }
 }

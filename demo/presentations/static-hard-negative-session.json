@@ -1,0 +1,294 @@
+{
+  "run_id": "static-hard-negative-session",
+  "pipeline": "long_form",
+  "title": "Synthetic hard-negative motion static demo",
+  "input": {
+    "title": "Synthetic hard-negative motion",
+    "path": "assets/robust_hard_negative_motion.mp4",
+    "asset_url": "assets/robust_hard_negative_motion.mp4"
+  },
+  "summary": {
+    "session_id": "static_hard_negative",
+    "total_chunk_count": 8,
+    "selected_chunk_count": 2,
+    "selected_chunk_fraction": 0.25,
+    "candidate_run_count": 1,
+    "fallback_applied": false,
+    "total_cost_usd": 0,
+    "projected_cost_usd": 0.0197,
+    "vlm_call_count": 2,
+    "vlm_latency_total_ms": 2,
+    "cost_per_chunk_usd": 0,
+    "decoded_episode_count": 0,
+    "low_confidence_chunk_fraction": 0,
+    "model_id": "static-demo-mock"
+  },
+  "scorecard": {
+    "variant": "static_demo_hard_negative",
+    "metrics": {
+      "behavior_time_recall": 1,
+      "selected_chunk_fraction": 0.25,
+      "hard_negative_selection_rate": 0.25,
+      "projected_cost_usd": 0.0197
+    },
+    "available_variants": ["static_demo_hard_negative"]
+  },
+  "provenance": {
+    "evidence_tier": "mock",
+    "claim_boundary": "Public static demo over synthetic hard-negative fixtures only. This is a UI and artifact-shape demonstration, not target-domain validation."
+  },
+  "candidate_filter": {
+    "session_id": "static_hard_negative",
+    "selected_chunk_ids": [
+      "static_hard_negative_chunk_00002",
+      "static_hard_negative_chunk_00003"
+    ],
+    "fallback_applied": false,
+    "selected_fraction": 0.25,
+    "candidate_runs": [
+      {
+        "run_id": "static_hard_negative_candrun_001",
+        "session_id": "static_hard_negative",
+        "start_time_sec": 2,
+        "end_time_sec": 5,
+        "chunk_ids": [
+          "static_hard_negative_chunk_00002",
+          "static_hard_negative_chunk_00003"
+        ]
+      }
+    ]
+  },
+  "chunks": [
+    {
+      "chunk_id": "static_hard_negative_chunk_00000",
+      "start_time_sec": 0,
+      "end_time_sec": 2,
+      "selected": false,
+      "motion_energy": 0.022,
+      "periodicity_strength": 0.03,
+      "subject_motion_energy": 0.018,
+      "bbox_trajectory_periodicity_strength": 0.09,
+      "predicted_label": "none",
+      "confidence": 0.9,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    },
+    {
+      "chunk_id": "static_hard_negative_chunk_00001",
+      "start_time_sec": 1,
+      "end_time_sec": 3,
+      "selected": false,
+      "motion_energy": 0.056,
+      "periodicity_strength": 0.07,
+      "subject_motion_energy": 0.049,
+      "bbox_trajectory_periodicity_strength": 0.18,
+      "predicted_label": "none",
+      "confidence": 0.88,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    },
+    {
+      "chunk_id": "static_hard_negative_chunk_00002",
+      "start_time_sec": 2,
+      "end_time_sec": 4,
+      "selected": true,
+      "motion_energy": 0.188,
+      "periodicity_strength": 0.12,
+      "subject_motion_energy": 0.172,
+      "bbox_trajectory_periodicity_strength": 0.42,
+      "predicted_label": "none",
+      "confidence": 0.86,
+      "truth_label": "none",
+      "clip_url": "assets/robust_hard_negative_motion.mp4",
+      "routing_reasons": ["motion_energy>=0.140", "hard_negative_review"]
+    },
+    {
+      "chunk_id": "static_hard_negative_chunk_00003",
+      "start_time_sec": 3,
+      "end_time_sec": 5,
+      "selected": true,
+      "motion_energy": 0.176,
+      "periodicity_strength": 0.1,
+      "subject_motion_energy": 0.163,
+      "bbox_trajectory_periodicity_strength": 0.38,
+      "predicted_label": "none",
+      "confidence": 0.89,
+      "truth_label": "none",
+      "clip_url": "assets/robust_hard_negative_motion.mp4",
+      "routing_reasons": ["motion_energy>=0.140", "context_expansion"]
+    },
+    {
+      "chunk_id": "static_hard_negative_chunk_00004",
+      "start_time_sec": 4,
+      "end_time_sec": 6,
+      "selected": false,
+      "motion_energy": 0.071,
+      "periodicity_strength": 0.06,
+      "subject_motion_energy": 0.062,
+      "bbox_trajectory_periodicity_strength": 0.17,
+      "predicted_label": "none",
+      "confidence": 0.9,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    },
+    {
+      "chunk_id": "static_hard_negative_chunk_00005",
+      "start_time_sec": 5,
+      "end_time_sec": 7,
+      "selected": false,
+      "motion_energy": 0.028,
+      "periodicity_strength": 0.04,
+      "subject_motion_energy": 0.024,
+      "bbox_trajectory_periodicity_strength": 0.1,
+      "predicted_label": "none",
+      "confidence": 0.91,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    },
+    {
+      "chunk_id": "static_hard_negative_chunk_00006",
+      "start_time_sec": 6,
+      "end_time_sec": 8,
+      "selected": false,
+      "motion_energy": 0.016,
+      "periodicity_strength": 0.02,
+      "subject_motion_energy": 0.014,
+      "bbox_trajectory_periodicity_strength": 0.07,
+      "predicted_label": "none",
+      "confidence": 0.92,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    },
+    {
+      "chunk_id": "static_hard_negative_chunk_00007",
+      "start_time_sec": 7,
+      "end_time_sec": 8,
+      "selected": false,
+      "motion_energy": 0.011,
+      "periodicity_strength": 0.02,
+      "subject_motion_energy": 0.01,
+      "bbox_trajectory_periodicity_strength": 0.06,
+      "predicted_label": "none",
+      "confidence": 0.92,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    }
+  ],
+  "selected_clips": [
+    {
+      "chunk_id": "static_hard_negative_chunk_00002",
+      "start_time_sec": 2,
+      "end_time_sec": 4,
+      "selected": true,
+      "motion_energy": 0.188,
+      "periodicity_strength": 0.12,
+      "subject_motion_energy": 0.172,
+      "bbox_trajectory_periodicity_strength": 0.42,
+      "predicted_label": "none",
+      "label": "none",
+      "confidence": 0.86,
+      "truth_label": "none",
+      "clip_url": "assets/robust_hard_negative_motion.mp4",
+      "routing_reasons": ["motion_energy>=0.140", "hard_negative_review"],
+      "cost_usd": 0,
+      "composite": {
+        "id": "static-hard-negative-composite-00002",
+        "chunk_id": "static_hard_negative_chunk_00002",
+        "strategy": "static_demo_hard_negative_sequence",
+        "source_frame_indices": [8, 12, 16, 20, 24, 28],
+        "image_url": "assets/static_hard_negative_composite.svg"
+      },
+      "observation": {
+        "id": "static-hard-negative-observation-00002",
+        "composite_id": "static-hard-negative-composite-00002",
+        "label": "none",
+        "confidence": 0.86,
+        "evidence": "Synthetic proxy motion is directional and non-periodic; it is routed for review but does not match target stereotypy.",
+        "cost_usd": 0,
+        "latency_ms": 1,
+        "model_id": "static-demo-mock"
+      }
+    },
+    {
+      "chunk_id": "static_hard_negative_chunk_00003",
+      "start_time_sec": 3,
+      "end_time_sec": 5,
+      "selected": true,
+      "motion_energy": 0.176,
+      "periodicity_strength": 0.1,
+      "subject_motion_energy": 0.163,
+      "bbox_trajectory_periodicity_strength": 0.38,
+      "predicted_label": "none",
+      "label": "none",
+      "confidence": 0.89,
+      "truth_label": "none",
+      "clip_url": "assets/robust_hard_negative_motion.mp4",
+      "routing_reasons": ["motion_energy>=0.140", "context_expansion"],
+      "cost_usd": 0,
+      "composite": {
+        "id": "static-hard-negative-composite-00003",
+        "chunk_id": "static_hard_negative_chunk_00003",
+        "strategy": "static_demo_hard_negative_sequence",
+        "source_frame_indices": [12, 16, 20, 24, 28, 32],
+        "image_url": "assets/static_hard_negative_composite.svg"
+      },
+      "observation": {
+        "id": "static-hard-negative-observation-00003",
+        "composite_id": "static-hard-negative-composite-00003",
+        "label": "none",
+        "confidence": 0.89,
+        "evidence": "The selected window contains salient motion, but the pattern is a non-target confounder rather than repetitive stereotyped behavior.",
+        "cost_usd": 0,
+        "latency_ms": 1,
+        "model_id": "static-demo-mock"
+      }
+    }
+  ],
+  "composites": [
+    {
+      "id": "static-hard-negative-composite-00002",
+      "chunk_id": "static_hard_negative_chunk_00002",
+      "strategy": "static_demo_hard_negative_sequence",
+      "source_frame_indices": [8, 12, 16, 20, 24, 28],
+      "image_url": "assets/static_hard_negative_composite.svg"
+    },
+    {
+      "id": "static-hard-negative-composite-00003",
+      "chunk_id": "static_hard_negative_chunk_00003",
+      "strategy": "static_demo_hard_negative_sequence",
+      "source_frame_indices": [12, 16, 20, 24, 28, 32],
+      "image_url": "assets/static_hard_negative_composite.svg"
+    }
+  ],
+  "observations": [
+    {
+      "id": "static-hard-negative-observation-00002",
+      "composite_id": "static-hard-negative-composite-00002",
+      "label": "none",
+      "confidence": 0.86,
+      "evidence": "Synthetic proxy motion is directional and non-periodic; it is routed for review but does not match target stereotypy.",
+      "cost_usd": 0,
+      "latency_ms": 1,
+      "model_id": "static-demo-mock"
+    },
+    {
+      "id": "static-hard-negative-observation-00003",
+      "composite_id": "static-hard-negative-composite-00003",
+      "label": "none",
+      "confidence": 0.89,
+      "evidence": "The selected window contains salient motion, but the pattern is a non-target confounder rather than repetitive stereotyped behavior.",
+      "cost_usd": 0,
+      "latency_ms": 1,
+      "model_id": "static-demo-mock"
+    }
+  ],
+  "timeline": {
+    "truth_segments": [],
+    "decoded_segments": []
+  },
+  "episodes": [],
+  "warnings": [
+    "Static public demo: live runs, uploads, and backend persistence are disabled.",
+    "Hard-negative fixture: selected chunks demonstrate confounder review, not target behavior."
+  ]
+}
