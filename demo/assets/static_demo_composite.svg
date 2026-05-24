@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="640" viewBox="0 0 980 640" role="img" aria-label="Static demo composite showing repeated proxy motion across six frames">
+  <rect width="980" height="640" fill="#fafaf9"/>
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
+    <text x="36" y="54" fill="#1c1917" font-size="30" font-weight="650">Selected evidence sequence</text>
+    <text x="36" y="84" fill="#78716c" font-size="16">Synthetic public fixture · ordered frames from the routed motion window</text>
+  </g>
+  <g transform="translate(36 122)">
+    <g fill="#fff" stroke="#d6d3d1" stroke-width="2">
+      <rect x="0" y="0" width="286" height="190" rx="8"/>
+      <rect x="314" y="0" width="286" height="190" rx="8"/>
+      <rect x="628" y="0" width="286" height="190" rx="8"/>
+      <rect x="0" y="222" width="286" height="190" rx="8"/>
+      <rect x="314" y="222" width="286" height="190" rx="8"/>
+      <rect x="628" y="222" width="286" height="190" rx="8"/>
+    </g>
+    <g fill="none" stroke="#e7e5e4" stroke-width="1">
+      <path d="M24 150H262M338 150H576M652 150H890M24 372H262M338 372H576M652 372H890"/>
+      <path d="M24 38H262M338 38H576M652 38H890M24 260H262M338 260H576M652 260H890"/>
+    </g>
+    <g fill="#316b8c">
+      <circle cx="72" cy="96" r="25"/>
+      <circle cx="442" cy="74" r="25"/>
+      <circle cx="806" cy="116" r="25"/>
+      <circle cx="92" cy="338" r="25"/>
+      <circle cx="454" cy="306" r="25"/>
+      <circle cx="790" cy="350" r="25"/>
+    </g>
+    <g stroke="#316b8c" stroke-width="10" stroke-linecap="round" opacity="0.62">
+      <path d="M72 96c42-42 82-42 124 0"/>
+      <path d="M442 74c-45 45-86 45-126 0"/>
+      <path d="M806 116c42-42 82-42 124 0"/>
+      <path d="M92 338c44-40 84-40 126 0"/>
+      <path d="M454 306c-44 44-86 44-128 0"/>
+      <path d="M790 350c45-42 88-42 130 0"/>
+    </g>
+    <g fill="#78716c" font-family="JetBrains Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="14">
+      <text x="18" y="174">frame 10 · t=2.0s</text>
+      <text x="332" y="174">frame 14 · t=2.8s</text>
+      <text x="646" y="174">frame 18 · t=3.6s</text>
+      <text x="18" y="396">frame 22 · t=4.4s</text>
+      <text x="332" y="396">frame 26 · t=5.2s</text>
+      <text x="646" y="396">frame 30 · t=6.0s</text>
+    </g>
+  </g>
+  <g transform="translate(36 576)" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
+    <rect width="908" height="34" rx="6" fill="#f5f5f4" stroke="#e7e5e4"/>
+    <text x="14" y="22" fill="#44403c" font-size="14">routing: bbox_trajectory_periodicity_strength ≥ 0.350 · observation: other_repetitive · confidence: 0.82</text>
+  </g>
+</svg>

@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.2.0",
+  "summary": {
+    "annotation_file_count": 1,
+    "export_file_count": 1,
+    "revision_file_count": 0,
+    "manifest_exists": true,
+    "manifest_session_count": 1,
+    "ready_for_eval_count": 1,
+    "missing_export_count": 0,
+    "missing_revision_count": 0,
+    "invalid_file_count": 0,
+    "orphan_annotation_count": 0,
+    "orphan_export_count": 0,
+    "orphan_revision_directory_count": 0,
+    "manifest_error_count": 0
+  },
+  "items": [
+    {
+      "video_id": "static-robust-motion",
+      "in_catalog": true,
+      "status": "reviewed",
+      "interval_count": 3,
+      "ready_for_eval": true,
+      "warning_count": 0,
+      "has_export": true,
+      "revision_count": 0,
+      "errors": [],
+      "storage": {
+        "annotation_path": "demo/annotations/static-robust-motion.json",
+        "export_path": "demo/annotations/static-robust-motion.json",
+        "revision_directory": "demo/annotations"
+      }
+    }
+  ],
+  "orphan_exports": [],
+  "orphan_revision_directories": [],
+  "manifest": {
+    "path": "demo/heldout_session_manifest.json",
+    "exists": true,
+    "session_count": 1,
+    "errors": []
+  }
+}

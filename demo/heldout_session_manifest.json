@@ -1,0 +1,14 @@
+{
+  "path": "demo/heldout_session_manifest.json",
+  "manifest": {
+    "schema_version": "0.2.0",
+    "sessions": [
+      {
+        "session_id": "static_robust_motion",
+        "subject_id": "subject_proxy",
+        "video_path": "assets/robust_motion_positive.mp4",
+        "annotation_path": "annotations/static-robust-motion.json"
+      }
+    ]
+  }
+}

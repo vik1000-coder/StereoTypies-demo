@@ -1,0 +1,43 @@
+{
+  "videos": [
+    {
+      "id": "static-robust-motion",
+      "title": "Synthetic repetitive-motion fixture",
+      "description": "Public-safe synthetic proxy video used to demonstrate routing, evidence review, and timeline decoding.",
+      "kind": "public_demo_fixture",
+      "subject_id": "subject_proxy",
+      "path": "assets/robust_motion_positive.mp4",
+      "asset_url": "assets/robust_motion_positive.mp4",
+      "default_pipeline": "long_form"
+    },
+    {
+      "id": "static-hard-negative",
+      "title": "Synthetic hard-negative motion",
+      "description": "Public-safe counterexample with non-target motion for reviewing candidate-filter behavior.",
+      "kind": "public_demo_fixture",
+      "subject_id": "subject_proxy",
+      "path": "assets/robust_hard_negative_motion.mp4",
+      "asset_url": "assets/robust_hard_negative_motion.mp4",
+      "default_pipeline": "long_form"
+    }
+  ],
+  "saved_runs": [
+    {
+      "id": "static-demo-session",
+      "title": "Public static evidence demo",
+      "description": "Sanitized long-form-style presentation bundle served without the local FastAPI backend.",
+      "pipeline": "long_form",
+      "kind": "static_public_demo",
+      "path": "presentations/static-demo-session.json",
+      "video_id": "static-robust-motion"
+    }
+  ],
+  "configs": [
+    {
+      "id": "static-demo",
+      "title": "Static public demo bundle",
+      "pipeline": "long_form",
+      "path": "demo/catalog.json"
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "run_id": "static-demo-session",
+  "pipeline": "long_form",
+  "title": "Synthetic repetitive-motion fixture static demo",
+  "input": {
+    "title": "Synthetic repetitive-motion fixture",
+    "path": "assets/robust_motion_positive.mp4",
+    "asset_url": "assets/robust_motion_positive.mp4"
+  },
+  "summary": {
+    "session_id": "static_robust_motion",
+    "total_chunk_count": 8,
+    "selected_chunk_count": 2,
+    "selected_chunk_fraction": 0.25,
+    "candidate_run_count": 1,
+    "fallback_applied": false,
+    "total_cost_usd": 0,
+    "projected_cost_usd": 0.0197,
+    "vlm_call_count": 2,
+    "vlm_latency_total_ms": 2,
+    "cost_per_chunk_usd": 0,
+    "decoded_episode_count": 1,
+    "low_confidence_chunk_fraction": 0.125,
+    "model_id": "static-demo-mock"
+  },
+  "scorecard": {
+    "variant": "static_demo",
+    "metrics": {
+      "behavior_time_recall": 1,
+      "selected_chunk_fraction": 0.25,
+      "hard_negative_selection_rate": 0,
+      "projected_cost_usd": 0.0197
+    },
+    "available_variants": ["static_demo"]
+  },
+  "provenance": {
+    "evidence_tier": "mock",
+    "claim_boundary": "Public static demo over synthetic fixtures only. This is a UI and artifact-shape demonstration, not target-domain validation."
+  },
+  "candidate_filter": {
+    "session_id": "static_robust_motion",
+    "selected_chunk_ids": [
+      "static_robust_motion_chunk_00002",
+      "static_robust_motion_chunk_00003"
+    ],
+    "fallback_applied": false,
+    "selected_fraction": 0.25,
+    "candidate_runs": [
+      {
+        "run_id": "static_robust_motion_candrun_001",
+        "session_id": "static_robust_motion",
+        "start_time_sec": 2,
+        "end_time_sec": 5,
+        "chunk_ids": [
+          "static_robust_motion_chunk_00002",
+          "static_robust_motion_chunk_00003"
+        ]
+      }
+    ]
+  },
+  "chunks": [
+    {
+      "chunk_id": "static_robust_motion_chunk_00000",
+      "start_time_sec": 0,
+      "end_time_sec": 2,
+      "selected": false,
+      "motion_energy": 0.018,
+      "periodicity_strength": 0.04,
+      "subject_motion_energy": 0.012,
+      "bbox_trajectory_periodicity_strength": 0.11,
+      "predicted_label": "none",
+      "confidence": 0.7,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    },
+    {
+      "chunk_id": "static_robust_motion_chunk_00001",
+      "start_time_sec": 1,
+      "end_time_sec": 3,
+      "selected": false,
+      "motion_energy": 0.044,
+      "periodicity_strength": 0.09,
+      "subject_motion_energy": 0.038,
+      "bbox_trajectory_periodicity_strength": 0.26,
+      "predicted_label": "none",
+      "confidence": 0.7,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    },
+    {
+      "chunk_id": "static_robust_motion_chunk_00002",
+      "start_time_sec": 2,
+      "end_time_sec": 4,
+      "selected": true,
+      "motion_energy": 0.198,
+      "periodicity_strength": 0.48,
+      "subject_motion_energy": 0.184,
+      "bbox_trajectory_periodicity_strength": 0.86,
+      "predicted_label": "other_repetitive",
+      "confidence": 0.78,
+      "truth_label": "other_repetitive",
+      "clip_url": "assets/robust_motion_positive.mp4",
+      "routing_reasons": ["bbox_trajectory_periodicity_strength>=0.350", "context_expansion"]
+    },
+    {
+      "chunk_id": "static_robust_motion_chunk_00003",
+      "start_time_sec": 3,
+      "end_time_sec": 5,
+      "selected": true,
+      "motion_energy": 0.213,
+      "periodicity_strength": 0.52,
+      "subject_motion_energy": 0.191,
+      "bbox_trajectory_periodicity_strength": 0.93,
+      "predicted_label": "other_repetitive",
+      "confidence": 0.82,
+      "truth_label": "other_repetitive",
+      "clip_url": "assets/robust_motion_positive.mp4",
+      "routing_reasons": ["bbox_trajectory_periodicity_strength>=0.350"]
+    },
+    {
+      "chunk_id": "static_robust_motion_chunk_00004",
+      "start_time_sec": 4,
+      "end_time_sec": 6,
+      "selected": false,
+      "motion_energy": 0.082,
+      "periodicity_strength": 0.16,
+      "subject_motion_energy": 0.061,
+      "bbox_trajectory_periodicity_strength": 0.31,
+      "predicted_label": "none",
+      "confidence": 0.7,
+      "truth_label": "other_repetitive",
+      "routing_reasons": ["below_thresholds"]
+    },
+    {
+      "chunk_id": "static_robust_motion_chunk_00005",
+      "start_time_sec": 5,
+      "end_time_sec": 7,
+      "selected": false,
+      "motion_energy": 0.026,
+      "periodicity_strength": 0.05,
+      "subject_motion_energy": 0.021,
+      "bbox_trajectory_periodicity_strength": 0.18,
+      "predicted_label": "none",
+      "confidence": 0.7,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    },
+    {
+      "chunk_id": "static_robust_motion_chunk_00006",
+      "start_time_sec": 6,
+      "end_time_sec": 8,
+      "selected": false,
+      "motion_energy": 0.016,
+      "periodicity_strength": 0.03,
+      "subject_motion_energy": 0.014,
+      "bbox_trajectory_periodicity_strength": 0.1,
+      "predicted_label": "none",
+      "confidence": 0.7,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    },
+    {
+      "chunk_id": "static_robust_motion_chunk_00007",
+      "start_time_sec": 7,
+      "end_time_sec": 8,
+      "selected": false,
+      "motion_energy": 0.01,
+      "periodicity_strength": 0.02,
+      "subject_motion_energy": 0.01,
+      "bbox_trajectory_periodicity_strength": 0.07,
+      "predicted_label": "none",
+      "confidence": 0.7,
+      "truth_label": "none",
+      "routing_reasons": ["below_thresholds"]
+    }
+  ],
+  "selected_clips": [
+    {
+      "chunk_id": "static_robust_motion_chunk_00002",
+      "start_time_sec": 2,
+      "end_time_sec": 4,
+      "selected": true,
+      "motion_energy": 0.198,
+      "periodicity_strength": 0.48,
+      "subject_motion_energy": 0.184,
+      "bbox_trajectory_periodicity_strength": 0.86,
+      "predicted_label": "other_repetitive",
+      "label": "other_repetitive",
+      "confidence": 0.78,
+      "truth_label": "other_repetitive",
+      "clip_url": "assets/robust_motion_positive.mp4",
+      "routing_reasons": ["bbox_trajectory_periodicity_strength>=0.350", "context_expansion"],
+      "cost_usd": 0,
+      "composite": {
+        "id": "static-demo-composite-00002",
+        "chunk_id": "static_robust_motion_chunk_00002",
+        "strategy": "static_demo_sequence",
+        "source_frame_indices": [10, 14, 18, 22, 26, 30],
+        "image_url": "assets/static_demo_composite.svg"
+      },
+      "observation": {
+        "id": "static-demo-observation-00002",
+        "composite_id": "static-demo-composite-00002",
+        "label": "other_repetitive",
+        "confidence": 0.78,
+        "evidence": "Synthetic subject proxy shows repeated horizontal oscillation across the selected window.",
+        "cost_usd": 0,
+        "latency_ms": 1,
+        "model_id": "static-demo-mock"
+      }
+    },
+    {
+      "chunk_id": "static_robust_motion_chunk_00003",
+      "start_time_sec": 3,
+      "end_time_sec": 5,
+      "selected": true,
+      "motion_energy": 0.213,
+      "periodicity_strength": 0.52,
+      "subject_motion_energy": 0.191,
+      "bbox_trajectory_periodicity_strength": 0.93,
+      "predicted_label": "other_repetitive",
+      "label": "other_repetitive",
+      "confidence": 0.82,
+      "truth_label": "other_repetitive",
+      "clip_url": "assets/robust_motion_positive.mp4",
+      "routing_reasons": ["bbox_trajectory_periodicity_strength>=0.350"],
+      "cost_usd": 0,
+      "composite": {
+        "id": "static-demo-composite-00003",
+        "chunk_id": "static_robust_motion_chunk_00003",
+        "strategy": "static_demo_sequence",
+        "source_frame_indices": [15, 19, 23, 27, 31, 35],
+        "image_url": "assets/static_demo_composite.svg"
+      },
+      "observation": {
+        "id": "static-demo-observation-00003",
+        "composite_id": "static-demo-composite-00003",
+        "label": "other_repetitive",
+        "confidence": 0.82,
+        "evidence": "The strongest motion window repeats the same proxy movement pattern with clear periodicity.",
+        "cost_usd": 0,
+        "latency_ms": 1,
+        "model_id": "static-demo-mock"
+      }
+    }
+  ],
+  "composites": [
+    {
+      "id": "static-demo-composite-00002",
+      "chunk_id": "static_robust_motion_chunk_00002",
+      "strategy": "static_demo_sequence",
+      "source_frame_indices": [10, 14, 18, 22, 26, 30],
+      "image_url": "assets/static_demo_composite.svg"
+    },
+    {
+      "id": "static-demo-composite-00003",
+      "chunk_id": "static_robust_motion_chunk_00003",
+      "strategy": "static_demo_sequence",
+      "source_frame_indices": [15, 19, 23, 27, 31, 35],
+      "image_url": "assets/static_demo_composite.svg"
+    }
+  ],
+  "observations": [
+    {
+      "id": "static-demo-observation-00002",
+      "composite_id": "static-demo-composite-00002",
+      "label": "other_repetitive",
+      "confidence": 0.78,
+      "evidence": "Synthetic subject proxy shows repeated horizontal oscillation across the selected window.",
+      "cost_usd": 0,
+      "latency_ms": 1,
+      "model_id": "static-demo-mock"
+    },
+    {
+      "id": "static-demo-observation-00003",
+      "composite_id": "static-demo-composite-00003",
+      "label": "other_repetitive",
+      "confidence": 0.82,
+      "evidence": "The strongest motion window repeats the same proxy movement pattern with clear periodicity.",
+      "cost_usd": 0,
+      "latency_ms": 1,
+      "model_id": "static-demo-mock"
+    }
+  ],
+  "timeline": {
+    "truth_segments": [
+      {
+        "label": "other_repetitive",
+        "start_time_sec": 2,
+        "end_time_sec": 5
+      }
+    ],
+    "decoded_segments": [
+      {
+        "label": "other_repetitive",
+        "start_time_sec": 2,
+        "end_time_sec": 5
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "candidate_id": "static_robust_motion_cand_00001",
+      "session_id": "static_robust_motion",
+      "start_time_sec": 2,
+      "end_time_sec": 5,
+      "label": "other_repetitive",
+      "per_chunk_observations": [
+        "static-demo-observation-00002",
+        "static-demo-observation-00003"
+      ],
+      "hmm_confidence": 0.84
+    }
+  ],
+  "warnings": [
+    "Static public demo: live runs, uploads, and backend persistence are disabled."
+  ]
+}
