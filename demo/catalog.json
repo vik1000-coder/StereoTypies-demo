@@ -19,6 +19,26 @@
       "path": "assets/robust_hard_negative_motion.mp4",
       "asset_url": "assets/robust_hard_negative_motion.mp4",
       "default_pipeline": "long_form"
+    },
+    {
+      "id": "static-late-behavior",
+      "title": "Synthetic late-onset behavior",
+      "description": "Public-safe fixture with a long static lead-in before a short late target-behavior interval.",
+      "kind": "public_demo_fixture",
+      "subject_id": "subject_proxy",
+      "path": "assets/robust_static_late_behavior.mp4",
+      "asset_url": "assets/robust_static_late_behavior.mp4",
+      "default_pipeline": "long_form"
+    },
+    {
+      "id": "static-short-smoke",
+      "title": "Synthetic short clip smoke test",
+      "description": "Two-second public-safe fixture for demonstrating clip-mode routing and annotation playback.",
+      "kind": "public_demo_fixture",
+      "subject_id": "subject_proxy",
+      "path": "assets/testsrc_clip.mp4",
+      "asset_url": "assets/testsrc_clip.mp4",
+      "default_pipeline": "clip"
     }
   ],
   "saved_runs": [
@@ -39,6 +59,24 @@
       "kind": "static_public_demo",
       "path": "presentations/static-hard-negative-session.json",
       "video_id": "static-hard-negative"
+    },
+    {
+      "id": "static-late-behavior-session",
+      "title": "Public static late-behavior demo",
+      "description": "Sanitized late-onset presentation showing static lead-in, routed behavior evidence, and a short decoded episode.",
+      "pipeline": "long_form",
+      "kind": "static_public_demo",
+      "path": "presentations/static-late-behavior-session.json",
+      "video_id": "static-late-behavior"
+    },
+    {
+      "id": "static-short-smoke-session",
+      "title": "Public static short-clip demo",
+      "description": "Sanitized clip-mode presentation over the short fixture with two behavior labels.",
+      "pipeline": "clip",
+      "kind": "static_public_demo",
+      "path": "presentations/static-short-smoke-session.json",
+      "video_id": "static-short-smoke"
     }
   ],
   "configs": [

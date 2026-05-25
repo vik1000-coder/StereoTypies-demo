@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "schema": "stereoscope.local_annotation",
+  "schema_version": "0.2.0",
+  "video_id": "static-late-behavior",
+  "session_id": "static_late_behavior",
+  "source_video_path": "assets/robust_static_late_behavior.mp4",
+  "reviewer": "public_demo",
+  "status": "reviewed",
+  "notes": "Static public demo annotation over a synthetic late-onset fixture.",
+  "updated_at": "2026-05-25T00:00:00Z",
+  "validation": {
+    "warning_count": 0,
+    "warnings": [],
+    "has_none": true,
+    "has_behavior": true,
+    "ready_for_eval": true
+  },
+  "intervals": [
+    {
+      "id": "static-late-none-before",
+      "label": "none",
+      "behavior_detail": "none_background",
+      "behavior_detail_title": "None/background",
+      "start_time_sec": 0,
+      "end_time_sec": 6,
+      "note": "Static lead-in before the target interval.",
+      "reviewer": "public_demo",
+      "source": "static_demo",
+      "source_behavior_id": null,
+      "source_video_id": "static-late-behavior"
+    },
+    {
+      "id": "static-late-flap",
+      "label": "flap",
+      "behavior_detail": "hand_flapping",
+      "behavior_detail_title": "Hand/arm flapping",
+      "start_time_sec": 6,
+      "end_time_sec": 7,
+      "note": "Synthetic late flap interval.",
+      "reviewer": "public_demo",
+      "source": "static_demo",
+      "source_behavior_id": null,
+      "source_video_id": "static-late-behavior"
+    },
+    {
+      "id": "static-late-none-after",
+      "label": "none",
+      "behavior_detail": "none_background",
+      "behavior_detail_title": "None/background",
+      "start_time_sec": 7,
+      "end_time_sec": 8,
+      "note": "",
+      "reviewer": "public_demo",
+      "source": "static_demo",
+      "source_behavior_id": null,
+      "source_video_id": "static-late-behavior"
+    }
+  ],
+  "source_suggestions": [],
+  "label_options": {
+    "schema_version": "0.2.0",
+    "temporal_labels": [
+      "none",
+      "flap",
+      "other_repetitive"
+    ],
+    "behavior_details": [
+      {
+        "id": "none_background",
+        "title": "None/background",
+        "label": "none"
+      },
+      {
+        "id": "ordinary_activity_confounder",
+        "title": "Ordinary activity confounder",
+        "label": "none"
+      },
+      {
+        "id": "hand_flapping",
+        "title": "Hand/arm flapping",
+        "label": "flap"
+      },
+      {
+        "id": "unclear_repetitive",
+        "title": "Unclear repetitive behavior",
+        "label": "other_repetitive"
+      }
+    ],
+    "default_detail_by_label": {
+      "none": "none_background",
+      "flap": "hand_flapping",
+      "other_repetitive": "unclear_repetitive"
+    }
+  },
+  "storage": {
+    "annotation_path": "demo/annotations/static-late-behavior.json",
+    "export_path": "demo/annotations/static-late-behavior.json",
+    "revision_directory": "demo/annotations"
+  },
+  "export": {
+    "schema_version": "0.2.0",
+    "session_id": "static_late_behavior",
+    "intervals": [
+      {
+        "schema_version": "0.2.0",
+        "label": "none",
+        "start_time_sec": 0,
+        "end_time_sec": 6
+      },
+      {
+        "schema_version": "0.2.0",
+        "label": "flap",
+        "start_time_sec": 6,
+        "end_time_sec": 7
+      },
+      {
+        "schema_version": "0.2.0",
+        "label": "none",
+        "start_time_sec": 7,
+        "end_time_sec": 8
+      }
+    ]
+  }
+}

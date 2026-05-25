@@ -1,12 +1,12 @@
 {
   "schema_version": "0.2.0",
   "summary": {
-    "video_count": 2,
+    "video_count": 4,
     "status_counts": {
-      "reviewed": 2,
+      "reviewed": 4,
       "not_started": 0
     },
-    "ready_for_eval_count": 2
+    "ready_for_eval_count": 4
   },
   "items": [
     {
@@ -42,6 +42,42 @@
         "warnings": [],
         "has_none": true,
         "has_behavior": false,
+        "ready_for_eval": true
+      }
+    },
+    {
+      "video_id": "static-late-behavior",
+      "label": "Synthetic late-onset behavior",
+      "path": "assets/robust_static_late_behavior.mp4",
+      "status": "reviewed",
+      "reviewer": "public_demo",
+      "updated_at": "2026-05-25T00:00:00Z",
+      "interval_count": 3,
+      "source_suggestion_count": 0,
+      "ready_for_eval": true,
+      "validation": {
+        "warning_count": 0,
+        "warnings": [],
+        "has_none": true,
+        "has_behavior": true,
+        "ready_for_eval": true
+      }
+    },
+    {
+      "video_id": "static-short-smoke",
+      "label": "Synthetic short clip smoke test",
+      "path": "assets/testsrc_clip.mp4",
+      "status": "reviewed",
+      "reviewer": "public_demo",
+      "updated_at": "2026-05-25T00:00:00Z",
+      "interval_count": 5,
+      "source_suggestion_count": 0,
+      "ready_for_eval": true,
+      "validation": {
+        "warning_count": 0,
+        "warnings": [],
+        "has_none": true,
+        "has_behavior": true,
         "ready_for_eval": true
       }
     }

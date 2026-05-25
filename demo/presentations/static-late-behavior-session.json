@@ -1,0 +1,375 @@
+{
+  "run_id": "static-late-behavior-session",
+  "pipeline": "long_form",
+  "title": "Synthetic late-onset behavior static demo",
+  "input": {
+    "title": "Synthetic late-onset behavior",
+    "path": "assets/robust_static_late_behavior.mp4",
+    "asset_url": "assets/robust_static_late_behavior.mp4"
+  },
+  "summary": {
+    "session_id": "static_late_behavior",
+    "total_chunk_count": 8,
+    "selected_chunk_count": 2,
+    "selected_chunk_fraction": 0.25,
+    "candidate_run_count": 1,
+    "fallback_applied": false,
+    "total_cost_usd": 0,
+    "projected_cost_usd": 0.0197,
+    "vlm_call_count": 2,
+    "vlm_latency_total_ms": 2,
+    "cost_per_chunk_usd": 0,
+    "decoded_episode_count": 1,
+    "low_confidence_chunk_fraction": 0.125,
+    "model_id": "static-demo-mock"
+  },
+  "scorecard": {
+    "variant": "static_demo_late_behavior",
+    "metrics": {
+      "behavior_time_recall": 1,
+      "selected_chunk_fraction": 0.25,
+      "hard_negative_selection_rate": 0,
+      "projected_cost_usd": 0.0197
+    },
+    "available_variants": [
+      "static_demo_late_behavior"
+    ]
+  },
+  "provenance": {
+    "evidence_tier": "mock",
+    "claim_boundary": "Public static demo over synthetic late-onset fixtures only. This is a UI and artifact-shape demonstration, not target-domain validation."
+  },
+  "candidate_filter": {
+    "session_id": "static_late_behavior",
+    "selected_chunk_ids": [
+      "static_late_behavior_chunk_00005",
+      "static_late_behavior_chunk_00006"
+    ],
+    "fallback_applied": false,
+    "selected_fraction": 0.25,
+    "candidate_runs": [
+      {
+        "run_id": "static_late_behavior_candrun_001",
+        "session_id": "static_late_behavior",
+        "start_time_sec": 5,
+        "end_time_sec": 8,
+        "chunk_ids": [
+          "static_late_behavior_chunk_00005",
+          "static_late_behavior_chunk_00006"
+        ]
+      }
+    ]
+  },
+  "chunks": [
+    {
+      "chunk_id": "static_late_behavior_chunk_00000",
+      "start_time_sec": 0,
+      "end_time_sec": 2,
+      "selected": false,
+      "motion_energy": 0.006,
+      "periodicity_strength": 0.01,
+      "subject_motion_energy": 0.004,
+      "bbox_trajectory_periodicity_strength": 0.03,
+      "predicted_label": "none",
+      "confidence": 0.92,
+      "truth_label": "none",
+      "routing_reasons": [
+        "below_thresholds",
+        "static_lead_in"
+      ]
+    },
+    {
+      "chunk_id": "static_late_behavior_chunk_00001",
+      "start_time_sec": 1,
+      "end_time_sec": 3,
+      "selected": false,
+      "motion_energy": 0.007,
+      "periodicity_strength": 0.02,
+      "subject_motion_energy": 0.005,
+      "bbox_trajectory_periodicity_strength": 0.04,
+      "predicted_label": "none",
+      "confidence": 0.92,
+      "truth_label": "none",
+      "routing_reasons": [
+        "below_thresholds",
+        "static_lead_in"
+      ]
+    },
+    {
+      "chunk_id": "static_late_behavior_chunk_00002",
+      "start_time_sec": 2,
+      "end_time_sec": 4,
+      "selected": false,
+      "motion_energy": 0.008,
+      "periodicity_strength": 0.02,
+      "subject_motion_energy": 0.005,
+      "bbox_trajectory_periodicity_strength": 0.05,
+      "predicted_label": "none",
+      "confidence": 0.91,
+      "truth_label": "none",
+      "routing_reasons": [
+        "below_thresholds",
+        "static_lead_in"
+      ]
+    },
+    {
+      "chunk_id": "static_late_behavior_chunk_00003",
+      "start_time_sec": 3,
+      "end_time_sec": 5,
+      "selected": false,
+      "motion_energy": 0.011,
+      "periodicity_strength": 0.03,
+      "subject_motion_energy": 0.008,
+      "bbox_trajectory_periodicity_strength": 0.07,
+      "predicted_label": "none",
+      "confidence": 0.9,
+      "truth_label": "none",
+      "routing_reasons": [
+        "below_thresholds",
+        "static_lead_in"
+      ]
+    },
+    {
+      "chunk_id": "static_late_behavior_chunk_00004",
+      "start_time_sec": 4,
+      "end_time_sec": 6,
+      "selected": false,
+      "motion_energy": 0.019,
+      "periodicity_strength": 0.05,
+      "subject_motion_energy": 0.013,
+      "bbox_trajectory_periodicity_strength": 0.12,
+      "predicted_label": "none",
+      "confidence": 0.88,
+      "truth_label": "none",
+      "routing_reasons": [
+        "below_thresholds"
+      ]
+    },
+    {
+      "chunk_id": "static_late_behavior_chunk_00005",
+      "start_time_sec": 5,
+      "end_time_sec": 7,
+      "selected": true,
+      "motion_energy": 0.154,
+      "periodicity_strength": 0.41,
+      "subject_motion_energy": 0.147,
+      "bbox_trajectory_periodicity_strength": 0.72,
+      "predicted_label": "flap",
+      "confidence": 0.74,
+      "truth_label": "flap",
+      "clip_url": "assets/robust_static_late_behavior.mp4",
+      "routing_reasons": [
+        "bbox_trajectory_periodicity_strength>=0.350",
+        "late_onset_context"
+      ]
+    },
+    {
+      "chunk_id": "static_late_behavior_chunk_00006",
+      "start_time_sec": 6,
+      "end_time_sec": 8,
+      "selected": true,
+      "motion_energy": 0.196,
+      "periodicity_strength": 0.57,
+      "subject_motion_energy": 0.18,
+      "bbox_trajectory_periodicity_strength": 0.88,
+      "predicted_label": "flap",
+      "confidence": 0.81,
+      "truth_label": "flap",
+      "clip_url": "assets/robust_static_late_behavior.mp4",
+      "routing_reasons": [
+        "bbox_trajectory_periodicity_strength>=0.350"
+      ]
+    },
+    {
+      "chunk_id": "static_late_behavior_chunk_00007",
+      "start_time_sec": 7,
+      "end_time_sec": 8,
+      "selected": false,
+      "motion_energy": 0.032,
+      "periodicity_strength": 0.06,
+      "subject_motion_energy": 0.025,
+      "bbox_trajectory_periodicity_strength": 0.16,
+      "predicted_label": "none",
+      "confidence": 0.86,
+      "truth_label": "none",
+      "routing_reasons": [
+        "below_thresholds"
+      ]
+    }
+  ],
+  "selected_clips": [
+    {
+      "chunk_id": "static_late_behavior_chunk_00005",
+      "start_time_sec": 5,
+      "end_time_sec": 7,
+      "selected": true,
+      "motion_energy": 0.154,
+      "periodicity_strength": 0.41,
+      "subject_motion_energy": 0.147,
+      "bbox_trajectory_periodicity_strength": 0.72,
+      "predicted_label": "flap",
+      "label": "flap",
+      "confidence": 0.74,
+      "truth_label": "flap",
+      "clip_url": "assets/robust_static_late_behavior.mp4",
+      "routing_reasons": [
+        "bbox_trajectory_periodicity_strength>=0.350",
+        "late_onset_context"
+      ],
+      "cost_usd": 0,
+      "composite": {
+        "id": "static-late-behavior-composite-00005",
+        "chunk_id": "static_late_behavior_chunk_00005",
+        "strategy": "static_demo_late_behavior_sequence",
+        "source_frame_indices": [
+          25,
+          28,
+          31,
+          34,
+          37,
+          40
+        ],
+        "image_url": "assets/static_late_behavior_composite.svg"
+      },
+      "observation": {
+        "id": "static-late-behavior-observation-00005",
+        "composite_id": "static-late-behavior-composite-00005",
+        "label": "flap",
+        "confidence": 0.74,
+        "evidence": "Motion is absent through the static lead-in, then a short repeated flap pattern appears near the end of the clip.",
+        "cost_usd": 0,
+        "latency_ms": 1,
+        "model_id": "static-demo-mock"
+      }
+    },
+    {
+      "chunk_id": "static_late_behavior_chunk_00006",
+      "start_time_sec": 6,
+      "end_time_sec": 8,
+      "selected": true,
+      "motion_energy": 0.196,
+      "periodicity_strength": 0.57,
+      "subject_motion_energy": 0.18,
+      "bbox_trajectory_periodicity_strength": 0.88,
+      "predicted_label": "flap",
+      "label": "flap",
+      "confidence": 0.81,
+      "truth_label": "flap",
+      "clip_url": "assets/robust_static_late_behavior.mp4",
+      "routing_reasons": [
+        "bbox_trajectory_periodicity_strength>=0.350"
+      ],
+      "cost_usd": 0,
+      "composite": {
+        "id": "static-late-behavior-composite-00006",
+        "chunk_id": "static_late_behavior_chunk_00006",
+        "strategy": "static_demo_late_behavior_sequence",
+        "source_frame_indices": [
+          30,
+          33,
+          36,
+          39,
+          42,
+          45
+        ],
+        "image_url": "assets/static_late_behavior_composite.svg"
+      },
+      "observation": {
+        "id": "static-late-behavior-observation-00006",
+        "composite_id": "static-late-behavior-composite-00006",
+        "label": "flap",
+        "confidence": 0.81,
+        "evidence": "The late selected window contains the clearest repeated up/down proxy movement and decodes to a short flap episode.",
+        "cost_usd": 0,
+        "latency_ms": 1,
+        "model_id": "static-demo-mock"
+      }
+    }
+  ],
+  "composites": [
+    {
+      "id": "static-late-behavior-composite-00005",
+      "chunk_id": "static_late_behavior_chunk_00005",
+      "strategy": "static_demo_late_behavior_sequence",
+      "source_frame_indices": [
+        25,
+        28,
+        31,
+        34,
+        37,
+        40
+      ],
+      "image_url": "assets/static_late_behavior_composite.svg"
+    },
+    {
+      "id": "static-late-behavior-composite-00006",
+      "chunk_id": "static_late_behavior_chunk_00006",
+      "strategy": "static_demo_late_behavior_sequence",
+      "source_frame_indices": [
+        30,
+        33,
+        36,
+        39,
+        42,
+        45
+      ],
+      "image_url": "assets/static_late_behavior_composite.svg"
+    }
+  ],
+  "observations": [
+    {
+      "id": "static-late-behavior-observation-00005",
+      "composite_id": "static-late-behavior-composite-00005",
+      "label": "flap",
+      "confidence": 0.74,
+      "evidence": "Motion is absent through the static lead-in, then a short repeated flap pattern appears near the end of the clip.",
+      "cost_usd": 0,
+      "latency_ms": 1,
+      "model_id": "static-demo-mock"
+    },
+    {
+      "id": "static-late-behavior-observation-00006",
+      "composite_id": "static-late-behavior-composite-00006",
+      "label": "flap",
+      "confidence": 0.81,
+      "evidence": "The late selected window contains the clearest repeated up/down proxy movement and decodes to a short flap episode.",
+      "cost_usd": 0,
+      "latency_ms": 1,
+      "model_id": "static-demo-mock"
+    }
+  ],
+  "timeline": {
+    "truth_segments": [
+      {
+        "label": "flap",
+        "start_time_sec": 6,
+        "end_time_sec": 7
+      }
+    ],
+    "decoded_segments": [
+      {
+        "label": "flap",
+        "start_time_sec": 6,
+        "end_time_sec": 7
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "candidate_id": "static_late_behavior_cand_00001",
+      "session_id": "static_late_behavior",
+      "start_time_sec": 6,
+      "end_time_sec": 7,
+      "label": "flap",
+      "per_chunk_observations": [
+        "static-late-behavior-observation-00005",
+        "static-late-behavior-observation-00006"
+      ],
+      "hmm_confidence": 0.8
+    }
+  ],
+  "warnings": [
+    "Static public demo: live runs, uploads, and backend persistence are disabled.",
+    "Late-onset fixture: the long static lead-in is intentional and exercises end-of-video behavior review."
+  ]
+}

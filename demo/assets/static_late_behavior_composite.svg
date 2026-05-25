@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="640" viewBox="0 0 980 640" role="img" aria-label="Static late-onset behavior composite showing static lead-in followed by late flap motion">
+  <rect width="980" height="640" fill="#fafaf9"/>
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
+    <text x="36" y="54" fill="#1c1917" font-size="30" font-weight="650">Late-onset evidence sequence</text>
+    <text x="36" y="84" fill="#78716c" font-size="16">Synthetic public fixture · static lead-in followed by a short routed flap interval</text>
+  </g>
+  <g transform="translate(36 122)">
+    <g fill="#fff" stroke="#d6d3d1" stroke-width="2">
+      <rect x="0" y="0" width="286" height="190" rx="8"/>
+      <rect x="314" y="0" width="286" height="190" rx="8"/>
+      <rect x="628" y="0" width="286" height="190" rx="8"/>
+      <rect x="0" y="222" width="286" height="190" rx="8"/>
+      <rect x="314" y="222" width="286" height="190" rx="8"/>
+      <rect x="628" y="222" width="286" height="190" rx="8"/>
+    </g>
+    <g fill="none" stroke="#e7e5e4" stroke-width="1">
+      <path d="M24 150H262M338 150H576M652 150H890M24 372H262M338 372H576M652 372H890"/>
+      <path d="M24 38H262M338 38H576M652 38H890M24 260H262M338 260H576M652 260H890"/>
+    </g>
+    <g fill="#a8a29e" opacity="0.52">
+      <circle cx="92" cy="104" r="22"/>
+      <circle cx="406" cy="104" r="22"/>
+      <circle cx="720" cy="104" r="22"/>
+    </g>
+    <g stroke="#a8a29e" stroke-width="8" stroke-linecap="round" opacity="0.32">
+      <path d="M92 104h92"/>
+      <path d="M406 104h92"/>
+      <path d="M720 104h92"/>
+    </g>
+    <g fill="#047857">
+      <circle cx="94" cy="338" r="24"/>
+      <circle cx="438" cy="304" r="24"/>
+      <circle cx="796" cy="350" r="24"/>
+    </g>
+    <g stroke="#047857" stroke-width="10" stroke-linecap="round" opacity="0.65">
+      <path d="M94 338c42-46 82-46 124 0"/>
+      <path d="M438 304c-44 46-86 46-128 0"/>
+      <path d="M796 350c43-44 84-44 126 0"/>
+    </g>
+    <g fill="#78716c" font-family="JetBrains Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="14">
+      <text x="18" y="174">frame 25 · t=5.0s</text>
+      <text x="332" y="174">frame 28 · t=5.6s</text>
+      <text x="646" y="174">frame 31 · t=6.2s</text>
+      <text x="18" y="396">frame 34 · t=6.8s</text>
+      <text x="332" y="396">frame 37 · t=7.4s</text>
+      <text x="646" y="396">frame 40 · t=8.0s</text>
+    </g>
+  </g>
+  <g transform="translate(36 576)" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
+    <rect width="908" height="34" rx="6" fill="#f5f5f4" stroke="#e7e5e4"/>
+    <text x="14" y="22" fill="#44403c" font-size="14">routing: late onset context · observation: flap · decoded episode: 6.0s-7.0s</text>
+  </g>
+</svg>

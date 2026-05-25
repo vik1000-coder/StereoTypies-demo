@@ -14,6 +14,18 @@
         "subject_id": "subject_proxy",
         "video_path": "assets/robust_hard_negative_motion.mp4",
         "annotation_path": "annotations/static-hard-negative.json"
+      },
+      {
+        "session_id": "static_late_behavior",
+        "subject_id": "subject_proxy",
+        "video_path": "assets/robust_static_late_behavior.mp4",
+        "annotation_path": "annotations/static-late-behavior.json"
+      },
+      {
+        "session_id": "static_short_smoke",
+        "subject_id": "subject_proxy",
+        "video_path": "assets/testsrc_clip.mp4",
+        "annotation_path": "annotations/static-short-smoke.json"
       }
     ]
   }

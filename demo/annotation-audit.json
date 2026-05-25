@@ -1,12 +1,12 @@
 {
   "schema_version": "0.2.0",
   "summary": {
-    "annotation_file_count": 2,
-    "export_file_count": 2,
+    "annotation_file_count": 4,
+    "export_file_count": 4,
     "revision_file_count": 0,
     "manifest_exists": true,
-    "manifest_session_count": 2,
-    "ready_for_eval_count": 2,
+    "manifest_session_count": 4,
+    "ready_for_eval_count": 4,
     "missing_export_count": 0,
     "missing_revision_count": 0,
     "invalid_file_count": 0,
@@ -47,6 +47,38 @@
         "export_path": "demo/annotations/static-hard-negative.json",
         "revision_directory": "demo/annotations"
       }
+    },
+    {
+      "video_id": "static-late-behavior",
+      "in_catalog": true,
+      "status": "reviewed",
+      "interval_count": 3,
+      "ready_for_eval": true,
+      "warning_count": 0,
+      "has_export": true,
+      "revision_count": 0,
+      "errors": [],
+      "storage": {
+        "annotation_path": "demo/annotations/static-late-behavior.json",
+        "export_path": "demo/annotations/static-late-behavior.json",
+        "revision_directory": "demo/annotations"
+      }
+    },
+    {
+      "video_id": "static-short-smoke",
+      "in_catalog": true,
+      "status": "reviewed",
+      "interval_count": 5,
+      "ready_for_eval": true,
+      "warning_count": 0,
+      "has_export": true,
+      "revision_count": 0,
+      "errors": [],
+      "storage": {
+        "annotation_path": "demo/annotations/static-short-smoke.json",
+        "export_path": "demo/annotations/static-short-smoke.json",
+        "revision_directory": "demo/annotations"
+      }
     }
   ],
   "orphan_exports": [],
@@ -54,7 +86,7 @@
   "manifest": {
     "path": "demo/heldout_session_manifest.json",
     "exists": true,
-    "session_count": 2,
+    "session_count": 4,
     "errors": []
   }
 }

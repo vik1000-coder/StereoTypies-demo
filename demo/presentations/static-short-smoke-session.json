@@ -1,0 +1,333 @@
+{
+  "run_id": "static-short-smoke-session",
+  "pipeline": "clip",
+  "title": "Synthetic short clip smoke static demo",
+  "input": {
+    "title": "Synthetic short clip smoke test",
+    "path": "assets/testsrc_clip.mp4",
+    "asset_url": "assets/testsrc_clip.mp4"
+  },
+  "summary": {
+    "session_id": "static_short_smoke",
+    "total_chunk_count": 4,
+    "selected_chunk_count": 2,
+    "selected_chunk_fraction": 0.5,
+    "candidate_run_count": 2,
+    "fallback_applied": false,
+    "total_cost_usd": 0,
+    "projected_cost_usd": 0.0049,
+    "vlm_call_count": 2,
+    "vlm_latency_total_ms": 2,
+    "cost_per_chunk_usd": 0,
+    "decoded_episode_count": 2,
+    "low_confidence_chunk_fraction": 0,
+    "model_id": "static-demo-mock"
+  },
+  "scorecard": {
+    "variant": "static_demo_short_clip",
+    "metrics": {
+      "behavior_time_recall": 1,
+      "selected_chunk_fraction": 0.5,
+      "hard_negative_selection_rate": 0,
+      "projected_cost_usd": 0.0049
+    },
+    "available_variants": [
+      "static_demo_short_clip"
+    ]
+  },
+  "provenance": {
+    "evidence_tier": "mock",
+    "claim_boundary": "Public static demo over a synthetic short smoke fixture only. This is a UI and artifact-shape demonstration, not target-domain validation."
+  },
+  "candidate_filter": {
+    "session_id": "static_short_smoke",
+    "selected_chunk_ids": [
+      "static_short_smoke_chunk_00001",
+      "static_short_smoke_chunk_00003"
+    ],
+    "fallback_applied": false,
+    "selected_fraction": 0.5,
+    "candidate_runs": [
+      {
+        "run_id": "static_short_smoke_candrun_001",
+        "session_id": "static_short_smoke",
+        "start_time_sec": 0.2,
+        "end_time_sec": 0.8,
+        "chunk_ids": [
+          "static_short_smoke_chunk_00001"
+        ]
+      },
+      {
+        "run_id": "static_short_smoke_candrun_002",
+        "session_id": "static_short_smoke",
+        "start_time_sec": 1.2,
+        "end_time_sec": 1.8,
+        "chunk_ids": [
+          "static_short_smoke_chunk_00003"
+        ]
+      }
+    ]
+  },
+  "chunks": [
+    {
+      "chunk_id": "static_short_smoke_chunk_00000",
+      "start_time_sec": 0,
+      "end_time_sec": 0.5,
+      "selected": false,
+      "motion_energy": 0.028,
+      "periodicity_strength": 0.06,
+      "subject_motion_energy": 0.02,
+      "bbox_trajectory_periodicity_strength": 0.12,
+      "predicted_label": "none",
+      "confidence": 0.82,
+      "truth_label": "none",
+      "routing_reasons": [
+        "brief_lead_in"
+      ]
+    },
+    {
+      "chunk_id": "static_short_smoke_chunk_00001",
+      "start_time_sec": 0.5,
+      "end_time_sec": 1,
+      "selected": true,
+      "motion_energy": 0.166,
+      "periodicity_strength": 0.43,
+      "subject_motion_energy": 0.151,
+      "bbox_trajectory_periodicity_strength": 0.71,
+      "predicted_label": "flap",
+      "confidence": 0.77,
+      "truth_label": "flap",
+      "clip_url": "assets/testsrc_clip.mp4",
+      "routing_reasons": [
+        "clip_mode_behavior_window"
+      ]
+    },
+    {
+      "chunk_id": "static_short_smoke_chunk_00002",
+      "start_time_sec": 1,
+      "end_time_sec": 1.5,
+      "selected": false,
+      "motion_energy": 0.061,
+      "periodicity_strength": 0.13,
+      "subject_motion_energy": 0.048,
+      "bbox_trajectory_periodicity_strength": 0.22,
+      "predicted_label": "none",
+      "confidence": 0.8,
+      "truth_label": "none",
+      "routing_reasons": [
+        "separator_context"
+      ]
+    },
+    {
+      "chunk_id": "static_short_smoke_chunk_00003",
+      "start_time_sec": 1.5,
+      "end_time_sec": 2,
+      "selected": true,
+      "motion_energy": 0.174,
+      "periodicity_strength": 0.46,
+      "subject_motion_energy": 0.158,
+      "bbox_trajectory_periodicity_strength": 0.74,
+      "predicted_label": "other_repetitive",
+      "confidence": 0.79,
+      "truth_label": "other_repetitive",
+      "clip_url": "assets/testsrc_clip.mp4",
+      "routing_reasons": [
+        "clip_mode_behavior_window"
+      ]
+    }
+  ],
+  "selected_clips": [
+    {
+      "chunk_id": "static_short_smoke_chunk_00001",
+      "start_time_sec": 0.5,
+      "end_time_sec": 1,
+      "selected": true,
+      "motion_energy": 0.166,
+      "periodicity_strength": 0.43,
+      "subject_motion_energy": 0.151,
+      "bbox_trajectory_periodicity_strength": 0.71,
+      "predicted_label": "flap",
+      "label": "flap",
+      "confidence": 0.77,
+      "truth_label": "flap",
+      "clip_url": "assets/testsrc_clip.mp4",
+      "routing_reasons": [
+        "clip_mode_behavior_window"
+      ],
+      "cost_usd": 0,
+      "composite": {
+        "id": "static-short-smoke-composite-00001",
+        "chunk_id": "static_short_smoke_chunk_00001",
+        "strategy": "static_demo_short_clip_sequence",
+        "source_frame_indices": [
+          3,
+          5,
+          7,
+          9,
+          11,
+          13
+        ],
+        "image_url": "assets/static_short_smoke_composite.svg"
+      },
+      "observation": {
+        "id": "static-short-smoke-observation-00001",
+        "composite_id": "static-short-smoke-composite-00001",
+        "label": "flap",
+        "confidence": 0.77,
+        "evidence": "The short fixture marks a compact flap interval for clip-mode playback and review controls.",
+        "cost_usd": 0,
+        "latency_ms": 1,
+        "model_id": "static-demo-mock"
+      }
+    },
+    {
+      "chunk_id": "static_short_smoke_chunk_00003",
+      "start_time_sec": 1.5,
+      "end_time_sec": 2,
+      "selected": true,
+      "motion_energy": 0.174,
+      "periodicity_strength": 0.46,
+      "subject_motion_energy": 0.158,
+      "bbox_trajectory_periodicity_strength": 0.74,
+      "predicted_label": "other_repetitive",
+      "label": "other_repetitive",
+      "confidence": 0.79,
+      "truth_label": "other_repetitive",
+      "clip_url": "assets/testsrc_clip.mp4",
+      "routing_reasons": [
+        "clip_mode_behavior_window"
+      ],
+      "cost_usd": 0,
+      "composite": {
+        "id": "static-short-smoke-composite-00003",
+        "chunk_id": "static_short_smoke_chunk_00003",
+        "strategy": "static_demo_short_clip_sequence",
+        "source_frame_indices": [
+          15,
+          17,
+          19,
+          21,
+          23,
+          25
+        ],
+        "image_url": "assets/static_short_smoke_composite.svg"
+      },
+      "observation": {
+        "id": "static-short-smoke-observation-00003",
+        "composite_id": "static-short-smoke-composite-00003",
+        "label": "other_repetitive",
+        "confidence": 0.79,
+        "evidence": "A second compact interval demonstrates that static mode can expose multiple labels inside one very short clip.",
+        "cost_usd": 0,
+        "latency_ms": 1,
+        "model_id": "static-demo-mock"
+      }
+    }
+  ],
+  "composites": [
+    {
+      "id": "static-short-smoke-composite-00001",
+      "chunk_id": "static_short_smoke_chunk_00001",
+      "strategy": "static_demo_short_clip_sequence",
+      "source_frame_indices": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "image_url": "assets/static_short_smoke_composite.svg"
+    },
+    {
+      "id": "static-short-smoke-composite-00003",
+      "chunk_id": "static_short_smoke_chunk_00003",
+      "strategy": "static_demo_short_clip_sequence",
+      "source_frame_indices": [
+        15,
+        17,
+        19,
+        21,
+        23,
+        25
+      ],
+      "image_url": "assets/static_short_smoke_composite.svg"
+    }
+  ],
+  "observations": [
+    {
+      "id": "static-short-smoke-observation-00001",
+      "composite_id": "static-short-smoke-composite-00001",
+      "label": "flap",
+      "confidence": 0.77,
+      "evidence": "The short fixture marks a compact flap interval for clip-mode playback and review controls.",
+      "cost_usd": 0,
+      "latency_ms": 1,
+      "model_id": "static-demo-mock"
+    },
+    {
+      "id": "static-short-smoke-observation-00003",
+      "composite_id": "static-short-smoke-composite-00003",
+      "label": "other_repetitive",
+      "confidence": 0.79,
+      "evidence": "A second compact interval demonstrates that static mode can expose multiple labels inside one very short clip.",
+      "cost_usd": 0,
+      "latency_ms": 1,
+      "model_id": "static-demo-mock"
+    }
+  ],
+  "timeline": {
+    "truth_segments": [
+      {
+        "label": "flap",
+        "start_time_sec": 0.2,
+        "end_time_sec": 0.8
+      },
+      {
+        "label": "other_repetitive",
+        "start_time_sec": 1.2,
+        "end_time_sec": 1.8
+      }
+    ],
+    "decoded_segments": [
+      {
+        "label": "flap",
+        "start_time_sec": 0.2,
+        "end_time_sec": 0.8
+      },
+      {
+        "label": "other_repetitive",
+        "start_time_sec": 1.2,
+        "end_time_sec": 1.8
+      }
+    ]
+  },
+  "episodes": [
+    {
+      "candidate_id": "static_short_smoke_cand_00001",
+      "session_id": "static_short_smoke",
+      "start_time_sec": 0.2,
+      "end_time_sec": 0.8,
+      "label": "flap",
+      "per_chunk_observations": [
+        "static-short-smoke-observation-00001"
+      ],
+      "hmm_confidence": 0.78
+    },
+    {
+      "candidate_id": "static_short_smoke_cand_00002",
+      "session_id": "static_short_smoke",
+      "start_time_sec": 1.2,
+      "end_time_sec": 1.8,
+      "label": "other_repetitive",
+      "per_chunk_observations": [
+        "static-short-smoke-observation-00003"
+      ],
+      "hmm_confidence": 0.79
+    }
+  ],
+  "warnings": [
+    "Static public demo: live runs, uploads, and backend persistence are disabled.",
+    "Short clip fixture: timing windows are compact to exercise clip-mode UI paths."
+  ]
+}
