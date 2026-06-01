@@ -30,7 +30,9 @@
         "annotation_path": "demo/annotations/static-robust-motion.json",
         "export_path": "demo/annotations/static-robust-motion.json",
         "revision_directory": "demo/annotations"
-      }
+      },
+      "label": "Realistic synthetic adult-motion fixture",
+      "path": "assets/realistic_adult_repetitive_motion.mp4"
     },
     {
       "video_id": "static-hard-negative",

@@ -1,11 +1,11 @@
 {
   "run_id": "static-demo-session",
   "pipeline": "long_form",
-  "title": "Synthetic repetitive-motion fixture static demo",
+  "title": "Realistic synthetic adult-motion static demo",
   "input": {
-    "title": "Synthetic repetitive-motion fixture",
-    "path": "assets/robust_motion_positive.mp4",
-    "asset_url": "assets/robust_motion_positive.mp4"
+    "title": "Realistic synthetic adult-motion fixture",
+    "path": "assets/realistic_adult_repetitive_motion.mp4",
+    "asset_url": "assets/realistic_adult_repetitive_motion.mp4"
   },
   "summary": {
     "session_id": "static_robust_motion",
@@ -31,15 +31,17 @@
       "hard_negative_selection_rate": 0,
       "projected_cost_usd": 0.0197
     },
-    "available_variants": ["static_demo"]
+    "available_variants": [
+      "static_demo"
+    ]
   },
   "provenance": {
-    "source_name": "Local synthetic robustness fixtures",
+    "source_name": "Generated public-safe adult silhouette fixture",
     "evidence_tier": "synthetic_fixture",
     "analysis_source": "static_mock_fixture",
     "public_display_allowed": true,
     "external_vlm_allowed": true,
-    "claim_boundary": "Public static fallback over synthetic fixtures only. This is a UI and artifact-shape demonstration, not clinical validation or target-domain proof.",
+    "claim_boundary": "Public static fallback over generated adult-silhouette footage only. This is a UI and artifact-shape demonstration, not clinical validation or target-domain proof.",
     "generated_at": "2026-05-24T00:00:00Z"
   },
   "candidate_filter": {
@@ -76,7 +78,9 @@
       "predicted_label": "none",
       "confidence": 0.7,
       "truth_label": "none",
-      "routing_reasons": ["below_thresholds"]
+      "routing_reasons": [
+        "below_thresholds"
+      ]
     },
     {
       "chunk_id": "static_robust_motion_chunk_00001",
@@ -90,7 +94,9 @@
       "predicted_label": "none",
       "confidence": 0.7,
       "truth_label": "none",
-      "routing_reasons": ["below_thresholds"]
+      "routing_reasons": [
+        "below_thresholds"
+      ]
     },
     {
       "chunk_id": "static_robust_motion_chunk_00002",
@@ -104,8 +110,11 @@
       "predicted_label": "other_repetitive",
       "confidence": 0.78,
       "truth_label": "other_repetitive",
-      "clip_url": "assets/robust_motion_positive.mp4",
-      "routing_reasons": ["bbox_trajectory_periodicity_strength>=0.350", "context_expansion"]
+      "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
+      "routing_reasons": [
+        "bbox_trajectory_periodicity_strength>=0.350",
+        "context_expansion"
+      ]
     },
     {
       "chunk_id": "static_robust_motion_chunk_00003",
@@ -119,8 +128,10 @@
       "predicted_label": "other_repetitive",
       "confidence": 0.82,
       "truth_label": "other_repetitive",
-      "clip_url": "assets/robust_motion_positive.mp4",
-      "routing_reasons": ["bbox_trajectory_periodicity_strength>=0.350"]
+      "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
+      "routing_reasons": [
+        "bbox_trajectory_periodicity_strength>=0.350"
+      ]
     },
     {
       "chunk_id": "static_robust_motion_chunk_00004",
@@ -134,7 +145,9 @@
       "predicted_label": "none",
       "confidence": 0.7,
       "truth_label": "other_repetitive",
-      "routing_reasons": ["below_thresholds"]
+      "routing_reasons": [
+        "below_thresholds"
+      ]
     },
     {
       "chunk_id": "static_robust_motion_chunk_00005",
@@ -148,7 +161,9 @@
       "predicted_label": "none",
       "confidence": 0.7,
       "truth_label": "none",
-      "routing_reasons": ["below_thresholds"]
+      "routing_reasons": [
+        "below_thresholds"
+      ]
     },
     {
       "chunk_id": "static_robust_motion_chunk_00006",
@@ -162,7 +177,9 @@
       "predicted_label": "none",
       "confidence": 0.7,
       "truth_label": "none",
-      "routing_reasons": ["below_thresholds"]
+      "routing_reasons": [
+        "below_thresholds"
+      ]
     },
     {
       "chunk_id": "static_robust_motion_chunk_00007",
@@ -176,7 +193,9 @@
       "predicted_label": "none",
       "confidence": 0.7,
       "truth_label": "none",
-      "routing_reasons": ["below_thresholds"]
+      "routing_reasons": [
+        "below_thresholds"
+      ]
     }
   ],
   "selected_clips": [
@@ -193,14 +212,24 @@
       "label": "other_repetitive",
       "confidence": 0.78,
       "truth_label": "other_repetitive",
-      "clip_url": "assets/robust_motion_positive.mp4",
-      "routing_reasons": ["bbox_trajectory_periodicity_strength>=0.350", "context_expansion"],
+      "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
+      "routing_reasons": [
+        "bbox_trajectory_periodicity_strength>=0.350",
+        "context_expansion"
+      ],
       "cost_usd": 0,
       "composite": {
         "id": "static-demo-composite-00002",
         "chunk_id": "static_robust_motion_chunk_00002",
         "strategy": "static_demo_sequence",
-        "source_frame_indices": [10, 14, 18, 22, 26, 30],
+        "source_frame_indices": [
+          10,
+          14,
+          18,
+          22,
+          26,
+          30
+        ],
         "image_url": "assets/static_demo_composite.svg"
       },
       "observation": {
@@ -227,14 +256,23 @@
       "label": "other_repetitive",
       "confidence": 0.82,
       "truth_label": "other_repetitive",
-      "clip_url": "assets/robust_motion_positive.mp4",
-      "routing_reasons": ["bbox_trajectory_periodicity_strength>=0.350"],
+      "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
+      "routing_reasons": [
+        "bbox_trajectory_periodicity_strength>=0.350"
+      ],
       "cost_usd": 0,
       "composite": {
         "id": "static-demo-composite-00003",
         "chunk_id": "static_robust_motion_chunk_00003",
         "strategy": "static_demo_sequence",
-        "source_frame_indices": [15, 19, 23, 27, 31, 35],
+        "source_frame_indices": [
+          15,
+          19,
+          23,
+          27,
+          31,
+          35
+        ],
         "image_url": "assets/static_demo_composite.svg"
       },
       "observation": {
@@ -254,14 +292,28 @@
       "id": "static-demo-composite-00002",
       "chunk_id": "static_robust_motion_chunk_00002",
       "strategy": "static_demo_sequence",
-      "source_frame_indices": [10, 14, 18, 22, 26, 30],
+      "source_frame_indices": [
+        10,
+        14,
+        18,
+        22,
+        26,
+        30
+      ],
       "image_url": "assets/static_demo_composite.svg"
     },
     {
       "id": "static-demo-composite-00003",
       "chunk_id": "static_robust_motion_chunk_00003",
       "strategy": "static_demo_sequence",
-      "source_frame_indices": [15, 19, 23, 27, 31, 35],
+      "source_frame_indices": [
+        15,
+        19,
+        23,
+        27,
+        31,
+        35
+      ],
       "image_url": "assets/static_demo_composite.svg"
     }
   ],

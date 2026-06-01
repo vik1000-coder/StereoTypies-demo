@@ -4,10 +4,10 @@
   "schema_version": "0.2.0",
   "video_id": "static-robust-motion",
   "session_id": "static_robust_motion",
-  "source_video_path": "assets/robust_motion_positive.mp4",
+  "source_video_path": "assets/realistic_adult_repetitive_motion.mp4",
   "reviewer": "public_demo",
   "status": "reviewed",
-  "notes": "Static public demo annotation over a synthetic fixture.",
+  "notes": "Generated public-safe adult-silhouette fallback; not clinical validation or target-domain proof.",
   "updated_at": "2026-05-24T00:00:00Z",
   "validation": {
     "warning_count": 0,
@@ -60,12 +60,32 @@
   "source_suggestions": [],
   "label_options": {
     "schema_version": "0.2.0",
-    "temporal_labels": ["none", "flap", "other_repetitive"],
+    "temporal_labels": [
+      "none",
+      "flap",
+      "other_repetitive"
+    ],
     "behavior_details": [
-      { "id": "none_background", "title": "None/background", "label": "none" },
-      { "id": "ordinary_activity_confounder", "title": "Ordinary activity confounder", "label": "none" },
-      { "id": "hand_flapping", "title": "Hand/arm flapping", "label": "flap" },
-      { "id": "unclear_repetitive", "title": "Unclear repetitive behavior", "label": "other_repetitive" }
+      {
+        "id": "none_background",
+        "title": "None/background",
+        "label": "none"
+      },
+      {
+        "id": "ordinary_activity_confounder",
+        "title": "Ordinary activity confounder",
+        "label": "none"
+      },
+      {
+        "id": "hand_flapping",
+        "title": "Hand/arm flapping",
+        "label": "flap"
+      },
+      {
+        "id": "unclear_repetitive",
+        "title": "Unclear repetitive behavior",
+        "label": "other_repetitive"
+      }
     ],
     "default_detail_by_label": {
       "none": "none_background",
@@ -82,9 +102,24 @@
     "schema_version": "0.2.0",
     "session_id": "static_robust_motion",
     "intervals": [
-      { "schema_version": "0.2.0", "label": "none", "start_time_sec": 0, "end_time_sec": 2 },
-      { "schema_version": "0.2.0", "label": "other_repetitive", "start_time_sec": 2, "end_time_sec": 5 },
-      { "schema_version": "0.2.0", "label": "none", "start_time_sec": 5, "end_time_sec": 8 }
+      {
+        "schema_version": "0.2.0",
+        "label": "none",
+        "start_time_sec": 0,
+        "end_time_sec": 2
+      },
+      {
+        "schema_version": "0.2.0",
+        "label": "other_repetitive",
+        "start_time_sec": 2,
+        "end_time_sec": 5
+      },
+      {
+        "schema_version": "0.2.0",
+        "label": "none",
+        "start_time_sec": 5,
+        "end_time_sec": 8
+      }
     ]
   }
 }

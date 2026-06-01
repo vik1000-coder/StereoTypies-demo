@@ -11,8 +11,8 @@
   "items": [
     {
       "video_id": "static-robust-motion",
-      "label": "Synthetic repetitive-motion fixture",
-      "path": "assets/robust_motion_positive.mp4",
+      "label": "Realistic synthetic adult-motion fixture",
+      "path": "assets/realistic_adult_repetitive_motion.mp4",
       "status": "reviewed",
       "reviewer": "public_demo",
       "updated_at": "2026-05-24T00:00:00Z",

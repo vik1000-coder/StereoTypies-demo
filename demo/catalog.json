@@ -2,12 +2,12 @@
   "videos": [
     {
       "id": "static-robust-motion",
-      "title": "Synthetic repetitive-motion fixture",
-      "description": "Public-safe synthetic proxy video used to demonstrate routing, evidence review, and timeline decoding.",
+      "title": "Realistic synthetic adult-motion fixture",
+      "description": "Public-safe generated adult silhouette video used to demonstrate evidence review with a more realistic scene than the abstract regression fixtures.",
       "kind": "public_demo_fixture",
       "subject_id": "subject_proxy",
-      "path": "assets/robust_motion_positive.mp4",
-      "asset_url": "assets/robust_motion_positive.mp4",
+      "path": "assets/realistic_adult_repetitive_motion.mp4",
+      "asset_url": "assets/realistic_adult_repetitive_motion.mp4",
       "default_pipeline": "long_form",
       "evidence_tier": "synthetic_fixture",
       "public_display_allowed": true
@@ -52,8 +52,8 @@
   "saved_runs": [
     {
       "id": "static-demo-session",
-      "title": "Public static evidence demo",
-      "description": "Sanitized long-form-style presentation bundle served without the local FastAPI backend.",
+      "title": "Public static realistic-motion demo",
+      "description": "Sanitized presentation bundle over a generated adult-silhouette fixture, served without the local FastAPI backend.",
       "pipeline": "long_form",
       "kind": "static_public_demo",
       "path": "presentations/static-demo-session.json",
