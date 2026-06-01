@@ -24,16 +24,175 @@
     "model_id": "static-demo-mock"
   },
   "scorecard": {
-    "variant": "static_demo",
+    "variant": "bbox_trajectory",
     "metrics": {
       "behavior_time_recall": 1,
-      "selected_chunk_fraction": 0.25,
-      "hard_negative_selection_rate": 0,
-      "projected_cost_usd": 0.0197
+      "signal_behavior_time_recall": 0.76,
+      "coverage_behavior_time_recall": 1,
+      "selected_fraction": 0.37333333333333335,
+      "selected_chunk_fraction": 0.37333333333333335,
+      "signal_selected_fraction": 0.20666666666666667,
+      "coverage_selected_fraction": 0.2,
+      "hard_negative_selection_rate": 0.24516129032258063,
+      "routing_reduction_factor_vs_full_routing": 2.6785714285714284,
+      "projected_cost_usd": 3.36
     },
     "available_variants": [
-      "static_demo"
-    ]
+      "bbox_trajectory",
+      "legacy",
+      "subject_motion_bbox",
+      "full_routing",
+      "coverage_only",
+      "random_stride"
+    ],
+    "evaluation_note": "Local-only SSBD-derived Stage-1 evaluation is summarized here without publishing restricted media. The public video remains a generated adult-silhouette fixture; these metrics describe the routing method on the private relaxed-data benchmark.",
+    "baseline_comparison": [
+      {
+        "id": "tuned_bbox_trajectory",
+        "label": "Tuned bbox trajectory",
+        "variant": "bbox_trajectory",
+        "metrics": {
+          "behavior_time_recall": 1,
+          "signal_behavior_time_recall": 0.76,
+          "selected_fraction": 0.37333333333333335,
+          "hard_negative_selection_rate": 0.24516129032258063,
+          "routing_reduction_factor_vs_full_routing": 2.6785714285714284,
+          "projected_cost_usd": 3.36
+        },
+        "note": "Current threshold 1.5; stronger signal recall with acceptable routing cost."
+      },
+      {
+        "id": "previous_bbox_trajectory",
+        "label": "Previous bbox trajectory",
+        "variant": "bbox_trajectory",
+        "metrics": {
+          "behavior_time_recall": 1,
+          "signal_behavior_time_recall": 0.34,
+          "selected_fraction": 0.25222222222222224,
+          "hard_negative_selection_rate": 0.11612903225806452,
+          "routing_reduction_factor_vs_full_routing": 3.964757709251101,
+          "projected_cost_usd": 2.27
+        },
+        "note": "Cheaper threshold 2.0, but too dependent on coverage sampling."
+      },
+      {
+        "id": "legacy_motion",
+        "label": "Legacy motion",
+        "variant": "legacy",
+        "metrics": {
+          "behavior_time_recall": 1,
+          "signal_behavior_time_recall": 0.42,
+          "selected_fraction": 0.4033333333333333,
+          "hard_negative_selection_rate": 1,
+          "routing_reduction_factor_vs_full_routing": 2.479338842975207,
+          "projected_cost_usd": 3.63
+        },
+        "note": "Full-frame motion baseline; catches motion but selects every hard negative."
+      },
+      {
+        "id": "subject_motion_bbox",
+        "label": "Subject motion bbox",
+        "variant": "subject_motion_bbox",
+        "metrics": {
+          "behavior_time_recall": 1,
+          "signal_behavior_time_recall": 0.92,
+          "selected_fraction": 0.5988888888888889,
+          "hard_negative_selection_rate": 0.8064516129032258,
+          "routing_reduction_factor_vs_full_routing": 1.6697588126159555,
+          "projected_cost_usd": 5.39
+        },
+        "note": "Higher signal recall, but over-selects and misses the reduction gate."
+      },
+      {
+        "id": "full_routing",
+        "label": "Full routing",
+        "variant": "full_routing",
+        "metrics": {
+          "behavior_time_recall": 1,
+          "signal_behavior_time_recall": 0,
+          "selected_fraction": 1,
+          "hard_negative_selection_rate": 1,
+          "routing_reduction_factor_vs_full_routing": 1,
+          "projected_cost_usd": 9
+        },
+        "note": "Upper-bound recall and cost reference."
+      },
+      {
+        "id": "coverage_only",
+        "label": "Coverage only",
+        "variant": "coverage_only",
+        "metrics": {
+          "behavior_time_recall": 1,
+          "signal_behavior_time_recall": 0,
+          "selected_fraction": 0.2,
+          "hard_negative_selection_rate": 0.07096774193548387,
+          "routing_reduction_factor_vs_full_routing": 5,
+          "projected_cost_usd": 1.8
+        },
+        "note": "Fixed-stride safety-net baseline with no behavior signal."
+      },
+      {
+        "id": "random_stride",
+        "label": "Random stride",
+        "variant": "random_stride",
+        "metrics": {
+          "behavior_time_recall": 0.64,
+          "signal_behavior_time_recall": 0,
+          "selected_fraction": 0.2,
+          "hard_negative_selection_rate": 0.25161290322580643,
+          "routing_reduction_factor_vs_full_routing": 5,
+          "projected_cost_usd": 1.8
+        },
+        "note": "Seeded random control at the same approximate stride budget."
+      }
+    ],
+    "research_readiness": {
+      "status": "method_preview_ready",
+      "what_this_demonstrates": [
+        "Stage-1 routing can reduce the number of chunks sent to expensive review while preserving behavior-time recall on the local SSBD-derived benchmark.",
+        "Signal-only recall is now reported separately from fixed coverage sampling.",
+        "Baselines expose the cost/recall/hard-negative tradeoff instead of hiding it in one aggregate metric."
+      ],
+      "what_this_does_not_demonstrate": [
+        "It is not clinical validation.",
+        "It is not proof of target-domain performance on consented real-world longitudinal footage.",
+        "The public video assets are generated fixtures; restricted evaluation media is not published."
+      ],
+      "current_best_method_result": {
+        "variant": "bbox_trajectory",
+        "behavior_time_recall": 1,
+        "signal_behavior_time_recall": 0.76,
+        "selected_fraction": 0.37333333333333335,
+        "hard_negative_selection_rate": 0.24516129032258063,
+        "routing_reduction_factor_vs_full_routing": 2.6785714285714284,
+        "projected_cost_usd": 3.36
+      },
+      "known_failure_modes": [
+        "Coverage can rescue behavior intervals that the behavior signal did not catch.",
+        "Full-frame motion over-selects high-motion confounders.",
+        "Subject-motion signals can improve recall but may exceed the routing-reduction gate.",
+        "Subject tracking gaps still bound signal recall."
+      ],
+      "next_data_needed": [
+        "Owned or explicitly consented adult public-demo positive clips.",
+        "A local-only restricted evaluation manifest for SSBD+/ACSA653-like sources.",
+        "Reviewer-adjudicated hard negatives and coverage-rescued intervals."
+      ]
+    },
+    "failure_summary": {
+      "behavior_interval_count": 16,
+      "behavior_intervals_caught_by_signal": 15,
+      "behavior_intervals_rescued_by_coverage": 9,
+      "behavior_intervals_missed_by_signal": 1,
+      "behavior_intervals_with_track_dropout": 1,
+      "behavior_time_caught_by_signal_sec": 76,
+      "behavior_time_rescued_by_coverage_sec": 24,
+      "behavior_time_missed_by_signal_sec": 24,
+      "behavior_time_with_track_dropout_sec": 3,
+      "hard_negative_selected_count": 38,
+      "hard_negative_chunk_count": 155,
+      "hard_negative_selection_rate": 0.24516129032258063
+    }
   },
   "provenance": {
     "source_name": "Generated public-safe adult silhouette fixture",
