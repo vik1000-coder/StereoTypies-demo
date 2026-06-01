@@ -36,8 +36,13 @@
     ]
   },
   "provenance": {
-    "evidence_tier": "mock",
-    "claim_boundary": "Public static demo over a synthetic short smoke fixture only. This is a UI and artifact-shape demonstration, not target-domain validation."
+    "source_name": "Local synthetic smoke fixture",
+    "evidence_tier": "synthetic_fixture",
+    "analysis_source": "static_mock_fixture",
+    "public_display_allowed": true,
+    "external_vlm_allowed": true,
+    "claim_boundary": "Public static fallback over a synthetic short smoke fixture only. This is a UI and artifact-shape demonstration, not target-domain validation.",
+    "generated_at": "2026-05-24T00:00:00Z"
   },
   "candidate_filter": {
     "session_id": "static_short_smoke",

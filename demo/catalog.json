@@ -8,7 +8,9 @@
       "subject_id": "subject_proxy",
       "path": "assets/robust_motion_positive.mp4",
       "asset_url": "assets/robust_motion_positive.mp4",
-      "default_pipeline": "long_form"
+      "default_pipeline": "long_form",
+      "evidence_tier": "synthetic_fixture",
+      "public_display_allowed": true
     },
     {
       "id": "static-hard-negative",
@@ -18,7 +20,9 @@
       "subject_id": "subject_proxy",
       "path": "assets/robust_hard_negative_motion.mp4",
       "asset_url": "assets/robust_hard_negative_motion.mp4",
-      "default_pipeline": "long_form"
+      "default_pipeline": "long_form",
+      "evidence_tier": "synthetic_fixture",
+      "public_display_allowed": true
     },
     {
       "id": "static-late-behavior",
@@ -28,7 +32,9 @@
       "subject_id": "subject_proxy",
       "path": "assets/robust_static_late_behavior.mp4",
       "asset_url": "assets/robust_static_late_behavior.mp4",
-      "default_pipeline": "long_form"
+      "default_pipeline": "long_form",
+      "evidence_tier": "synthetic_fixture",
+      "public_display_allowed": true
     },
     {
       "id": "static-short-smoke",
@@ -38,7 +44,9 @@
       "subject_id": "subject_proxy",
       "path": "assets/testsrc_clip.mp4",
       "asset_url": "assets/testsrc_clip.mp4",
-      "default_pipeline": "clip"
+      "default_pipeline": "clip",
+      "evidence_tier": "synthetic_fixture",
+      "public_display_allowed": true
     }
   ],
   "saved_runs": [

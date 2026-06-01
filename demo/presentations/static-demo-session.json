@@ -34,8 +34,13 @@
     "available_variants": ["static_demo"]
   },
   "provenance": {
-    "evidence_tier": "mock",
-    "claim_boundary": "Public static demo over synthetic fixtures only. This is a UI and artifact-shape demonstration, not target-domain validation."
+    "source_name": "Local synthetic robustness fixtures",
+    "evidence_tier": "synthetic_fixture",
+    "analysis_source": "static_mock_fixture",
+    "public_display_allowed": true,
+    "external_vlm_allowed": true,
+    "claim_boundary": "Public static fallback over synthetic fixtures only. This is a UI and artifact-shape demonstration, not target-domain validation.",
+    "generated_at": "2026-05-24T00:00:00Z"
   },
   "candidate_filter": {
     "session_id": "static_robust_motion",
