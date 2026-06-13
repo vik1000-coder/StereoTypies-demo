@@ -1,534 +1,524 @@
 {
-  "run_id": "static-demo-session",
-  "pipeline": "long_form",
-  "title": "Realistic synthetic adult-motion static demo",
-  "input": {
-    "title": "Realistic synthetic adult-motion fixture",
-    "path": "assets/realistic_adult_repetitive_motion.mp4",
-    "asset_url": "assets/realistic_adult_repetitive_motion.mp4"
+ "run_id": "static-demo-session",
+ "pipeline": "long_form",
+ "title": "Realistic synthetic adult-motion static demo",
+ "input": {
+  "title": "Realistic synthetic adult-motion fixture",
+  "path": "assets/realistic_adult_repetitive_motion.mp4",
+  "asset_url": "assets/realistic_adult_repetitive_motion.mp4"
+ },
+ "summary": {
+  "session_id": "static_robust_motion",
+  "total_chunk_count": 8,
+  "selected_chunk_count": 2,
+  "selected_chunk_fraction": 0.25,
+  "candidate_run_count": 1,
+  "fallback_applied": false,
+  "total_cost_usd": 0,
+  "projected_cost_usd": 0.0197,
+  "vlm_call_count": 2,
+  "vlm_latency_total_ms": 2,
+  "cost_per_chunk_usd": 0,
+  "decoded_episode_count": 1,
+  "low_confidence_chunk_fraction": 0.125,
+  "model_id": "static-demo-mock"
+ },
+ "scorecard": {
+  "variant": "bbox_trajectory",
+  "metrics": {
+   "behavior_time_recall": 1,
+   "signal_behavior_time_recall": 0.76,
+   "coverage_behavior_time_recall": 1,
+   "selected_fraction": 0.37333333333333335,
+   "selected_chunk_fraction": 0.37333333333333335,
+   "signal_selected_fraction": 0.20666666666666667,
+   "coverage_selected_fraction": 0.2,
+   "hard_negative_selection_rate": 0.24516129032258063,
+   "routing_reduction_factor_vs_full_routing": 2.6785714285714284,
+   "projected_cost_usd": 3.36
   },
-  "summary": {
-    "session_id": "static_robust_motion",
-    "total_chunk_count": 8,
-    "selected_chunk_count": 2,
-    "selected_chunk_fraction": 0.25,
-    "candidate_run_count": 1,
-    "fallback_applied": false,
-    "total_cost_usd": 0,
-    "projected_cost_usd": 0.0197,
-    "vlm_call_count": 2,
-    "vlm_latency_total_ms": 2,
-    "cost_per_chunk_usd": 0,
-    "decoded_episode_count": 1,
-    "low_confidence_chunk_fraction": 0.125,
-    "model_id": "static-demo-mock"
-  },
-  "scorecard": {
+  "available_variants": [
+   "bbox_trajectory",
+   "legacy",
+   "subject_motion_bbox",
+   "full_routing",
+   "coverage_only",
+   "random_stride"
+  ],
+  "evaluation_note": "These tiles are Stage-1 routing diagnostics on a private SSBD-derived benchmark \u2014 they measure which clips get routed for model review, not detection accuracy. The honest detection results are summarized in the panel at the top of this page.",
+  "baseline_comparison": [
+   {
+    "id": "tuned_bbox_trajectory",
+    "label": "Tuned bbox trajectory",
     "variant": "bbox_trajectory",
     "metrics": {
-      "behavior_time_recall": 1,
-      "signal_behavior_time_recall": 0.76,
-      "coverage_behavior_time_recall": 1,
-      "selected_fraction": 0.37333333333333335,
-      "selected_chunk_fraction": 0.37333333333333335,
-      "signal_selected_fraction": 0.20666666666666667,
-      "coverage_selected_fraction": 0.2,
-      "hard_negative_selection_rate": 0.24516129032258063,
-      "routing_reduction_factor_vs_full_routing": 2.6785714285714284,
-      "projected_cost_usd": 3.36
+     "behavior_time_recall": 1,
+     "signal_behavior_time_recall": 0.76,
+     "selected_fraction": 0.37333333333333335,
+     "hard_negative_selection_rate": 0.24516129032258063,
+     "routing_reduction_factor_vs_full_routing": 2.6785714285714284,
+     "projected_cost_usd": 3.36
     },
-    "available_variants": [
-      "bbox_trajectory",
-      "legacy",
-      "subject_motion_bbox",
-      "full_routing",
-      "coverage_only",
-      "random_stride"
-    ],
-    "evaluation_note": "Local-only SSBD-derived Stage-1 evaluation is summarized here without publishing restricted media. The public video remains a generated adult-silhouette fixture; these metrics describe the routing method on the private relaxed-data benchmark.",
-    "baseline_comparison": [
-      {
-        "id": "tuned_bbox_trajectory",
-        "label": "Tuned bbox trajectory",
-        "variant": "bbox_trajectory",
-        "metrics": {
-          "behavior_time_recall": 1,
-          "signal_behavior_time_recall": 0.76,
-          "selected_fraction": 0.37333333333333335,
-          "hard_negative_selection_rate": 0.24516129032258063,
-          "routing_reduction_factor_vs_full_routing": 2.6785714285714284,
-          "projected_cost_usd": 3.36
-        },
-        "note": "Current threshold 1.5; stronger signal recall with acceptable routing cost."
-      },
-      {
-        "id": "previous_bbox_trajectory",
-        "label": "Previous bbox trajectory",
-        "variant": "bbox_trajectory",
-        "metrics": {
-          "behavior_time_recall": 1,
-          "signal_behavior_time_recall": 0.34,
-          "selected_fraction": 0.25222222222222224,
-          "hard_negative_selection_rate": 0.11612903225806452,
-          "routing_reduction_factor_vs_full_routing": 3.964757709251101,
-          "projected_cost_usd": 2.27
-        },
-        "note": "Cheaper threshold 2.0, but too dependent on coverage sampling."
-      },
-      {
-        "id": "legacy_motion",
-        "label": "Legacy motion",
-        "variant": "legacy",
-        "metrics": {
-          "behavior_time_recall": 1,
-          "signal_behavior_time_recall": 0.42,
-          "selected_fraction": 0.4033333333333333,
-          "hard_negative_selection_rate": 1,
-          "routing_reduction_factor_vs_full_routing": 2.479338842975207,
-          "projected_cost_usd": 3.63
-        },
-        "note": "Full-frame motion baseline; catches motion but selects every hard negative."
-      },
-      {
-        "id": "subject_motion_bbox",
-        "label": "Subject motion bbox",
-        "variant": "subject_motion_bbox",
-        "metrics": {
-          "behavior_time_recall": 1,
-          "signal_behavior_time_recall": 0.92,
-          "selected_fraction": 0.5988888888888889,
-          "hard_negative_selection_rate": 0.8064516129032258,
-          "routing_reduction_factor_vs_full_routing": 1.6697588126159555,
-          "projected_cost_usd": 5.39
-        },
-        "note": "Higher signal recall, but over-selects and misses the reduction gate."
-      },
-      {
-        "id": "full_routing",
-        "label": "Full routing",
-        "variant": "full_routing",
-        "metrics": {
-          "behavior_time_recall": 1,
-          "signal_behavior_time_recall": 0,
-          "selected_fraction": 1,
-          "hard_negative_selection_rate": 1,
-          "routing_reduction_factor_vs_full_routing": 1,
-          "projected_cost_usd": 9
-        },
-        "note": "Upper-bound recall and cost reference."
-      },
-      {
-        "id": "coverage_only",
-        "label": "Coverage only",
-        "variant": "coverage_only",
-        "metrics": {
-          "behavior_time_recall": 1,
-          "signal_behavior_time_recall": 0,
-          "selected_fraction": 0.2,
-          "hard_negative_selection_rate": 0.07096774193548387,
-          "routing_reduction_factor_vs_full_routing": 5,
-          "projected_cost_usd": 1.8
-        },
-        "note": "Fixed-stride safety-net baseline with no behavior signal."
-      },
-      {
-        "id": "random_stride",
-        "label": "Random stride",
-        "variant": "random_stride",
-        "metrics": {
-          "behavior_time_recall": 0.64,
-          "signal_behavior_time_recall": 0,
-          "selected_fraction": 0.2,
-          "hard_negative_selection_rate": 0.25161290322580643,
-          "routing_reduction_factor_vs_full_routing": 5,
-          "projected_cost_usd": 1.8
-        },
-        "note": "Seeded random control at the same approximate stride budget."
-      }
-    ],
-    "research_readiness": {
-      "status": "method_preview_ready",
-      "what_this_demonstrates": [
-        "Stage-1 routing can reduce the number of chunks sent to expensive review while preserving behavior-time recall on the local SSBD-derived benchmark.",
-        "Signal-only recall is now reported separately from fixed coverage sampling.",
-        "Baselines expose the cost/recall/hard-negative tradeoff instead of hiding it in one aggregate metric."
-      ],
-      "what_this_does_not_demonstrate": [
-        "It is not clinical validation.",
-        "It is not proof of target-domain performance on consented real-world longitudinal footage.",
-        "The public video assets are generated fixtures; restricted evaluation media is not published."
-      ],
-      "current_best_method_result": {
-        "variant": "bbox_trajectory",
-        "behavior_time_recall": 1,
-        "signal_behavior_time_recall": 0.76,
-        "selected_fraction": 0.37333333333333335,
-        "hard_negative_selection_rate": 0.24516129032258063,
-        "routing_reduction_factor_vs_full_routing": 2.6785714285714284,
-        "projected_cost_usd": 3.36
-      },
-      "known_failure_modes": [
-        "Coverage can rescue behavior intervals that the behavior signal did not catch.",
-        "Full-frame motion over-selects high-motion confounders.",
-        "Subject-motion signals can improve recall but may exceed the routing-reduction gate.",
-        "Subject tracking gaps still bound signal recall."
-      ],
-      "next_data_needed": [
-        "Owned or explicitly consented adult public-demo positive clips.",
-        "A local-only restricted evaluation manifest for SSBD+/ACSA653-like sources.",
-        "Reviewer-adjudicated hard negatives and coverage-rescued intervals."
-      ]
+    "note": "Current threshold 1.5; stronger signal recall with acceptable routing cost."
+   },
+   {
+    "id": "previous_bbox_trajectory",
+    "label": "Previous bbox trajectory",
+    "variant": "bbox_trajectory",
+    "metrics": {
+     "behavior_time_recall": 1,
+     "signal_behavior_time_recall": 0.34,
+     "selected_fraction": 0.25222222222222224,
+     "hard_negative_selection_rate": 0.11612903225806452,
+     "routing_reduction_factor_vs_full_routing": 3.964757709251101,
+     "projected_cost_usd": 2.27
     },
-    "failure_summary": {
-      "behavior_interval_count": 16,
-      "behavior_intervals_caught_by_signal": 15,
-      "behavior_intervals_rescued_by_coverage": 9,
-      "behavior_intervals_missed_by_signal": 1,
-      "behavior_intervals_with_track_dropout": 1,
-      "behavior_time_caught_by_signal_sec": 76,
-      "behavior_time_rescued_by_coverage_sec": 24,
-      "behavior_time_missed_by_signal_sec": 24,
-      "behavior_time_with_track_dropout_sec": 3,
-      "hard_negative_selected_count": 38,
-      "hard_negative_chunk_count": 155,
-      "hard_negative_selection_rate": 0.24516129032258063
-    }
+    "note": "Cheaper threshold 2.0, but too dependent on coverage sampling."
+   },
+   {
+    "id": "legacy_motion",
+    "label": "Legacy motion",
+    "variant": "legacy",
+    "metrics": {
+     "behavior_time_recall": 1,
+     "signal_behavior_time_recall": 0.42,
+     "selected_fraction": 0.4033333333333333,
+     "hard_negative_selection_rate": 1,
+     "routing_reduction_factor_vs_full_routing": 2.479338842975207,
+     "projected_cost_usd": 3.63
+    },
+    "note": "Full-frame motion baseline; catches motion but selects every hard negative."
+   },
+   {
+    "id": "subject_motion_bbox",
+    "label": "Subject motion bbox",
+    "variant": "subject_motion_bbox",
+    "metrics": {
+     "behavior_time_recall": 1,
+     "signal_behavior_time_recall": 0.92,
+     "selected_fraction": 0.5988888888888889,
+     "hard_negative_selection_rate": 0.8064516129032258,
+     "routing_reduction_factor_vs_full_routing": 1.6697588126159555,
+     "projected_cost_usd": 5.39
+    },
+    "note": "Higher signal recall, but over-selects and misses the reduction gate."
+   },
+   {
+    "id": "full_routing",
+    "label": "Full routing",
+    "variant": "full_routing",
+    "metrics": {
+     "behavior_time_recall": 1,
+     "signal_behavior_time_recall": 0,
+     "selected_fraction": 1,
+     "hard_negative_selection_rate": 1,
+     "routing_reduction_factor_vs_full_routing": 1,
+     "projected_cost_usd": 9
+    },
+    "note": "Upper-bound recall and cost reference."
+   },
+   {
+    "id": "coverage_only",
+    "label": "Coverage only",
+    "variant": "coverage_only",
+    "metrics": {
+     "behavior_time_recall": 1,
+     "signal_behavior_time_recall": 0,
+     "selected_fraction": 0.2,
+     "hard_negative_selection_rate": 0.07096774193548387,
+     "routing_reduction_factor_vs_full_routing": 5,
+     "projected_cost_usd": 1.8
+    },
+    "note": "Fixed-stride safety-net baseline with no behavior signal."
+   },
+   {
+    "id": "random_stride",
+    "label": "Random stride",
+    "variant": "random_stride",
+    "metrics": {
+     "behavior_time_recall": 0.64,
+     "signal_behavior_time_recall": 0,
+     "selected_fraction": 0.2,
+     "hard_negative_selection_rate": 0.25161290322580643,
+     "routing_reduction_factor_vs_full_routing": 5,
+     "projected_cost_usd": 1.8
+    },
+    "note": "Seeded random control at the same approximate stride budget."
+   }
+  ],
+  "research_readiness": {
+   "status": "method_preview_ready",
+   "what_this_demonstrates": [
+    "On honest held-out evaluation (leave-one-video-out over real SSBD video), cheap motion/periodicity signals \u2014 including DINOv2 foundation features \u2014 sit at chance.",
+    "A vision-language model is the only component that discriminates behavior from non-behavior.",
+    "Self-consistency voting (sample 5x, require 3-4 of 5 to agree) recovers specificity, making the detector usable when behavior is rare."
+   ],
+   "what_this_does_not_demonstrate": [
+    "It is not clinical validation.",
+    "Measured on ~30 balanced, pre-segmented clips with wide confidence intervals \u2014 not validated at scale or on full untrimmed sessions.",
+    "The public video assets are generated fixtures; restricted evaluation media is not published."
+   ],
+   "known_failure_modes": [
+    "A single VLM read false-positives on ~30% of non-behavior; at realistic (rare) prevalence that collapses precision \u2014 voting is what fixes it.",
+    "Cheap routing signals barely reduce review volume because they flag most clips.",
+    "Whole-session detection (finding where behavior occurs in long video) is not yet validated."
+   ],
+   "next_data_needed": [
+    "Validate self-consistency voting at scale and on more subjects, at realistic prevalence.",
+    "Consented, prevalence-realistic session footage with reviewer-adjudicated negatives.",
+    "Inter-rater agreement (kappa/ICC) on the negative/confounder boundary."
+   ]
   },
-  "provenance": {
-    "source_name": "Generated public-safe adult silhouette fixture",
-    "evidence_tier": "synthetic_fixture",
-    "analysis_source": "static_mock_fixture",
-    "public_display_allowed": true,
-    "external_vlm_allowed": true,
-    "claim_boundary": "Public static fallback over generated adult-silhouette footage only. This is a UI and artifact-shape demonstration, not clinical validation or target-domain proof.",
-    "generated_at": "2026-05-24T00:00:00Z"
-  },
-  "candidate_filter": {
+  "failure_summary": {
+   "behavior_interval_count": 16,
+   "behavior_intervals_caught_by_signal": 15,
+   "behavior_intervals_rescued_by_coverage": 9,
+   "behavior_intervals_missed_by_signal": 1,
+   "behavior_intervals_with_track_dropout": 1,
+   "behavior_time_caught_by_signal_sec": 76,
+   "behavior_time_rescued_by_coverage_sec": 24,
+   "behavior_time_missed_by_signal_sec": 24,
+   "behavior_time_with_track_dropout_sec": 3,
+   "hard_negative_selected_count": 38,
+   "hard_negative_chunk_count": 155,
+   "hard_negative_selection_rate": 0.24516129032258063
+  }
+ },
+ "provenance": {
+  "source_name": "Generated public-safe adult silhouette fixture",
+  "evidence_tier": "synthetic_fixture",
+  "analysis_source": "static_mock_fixture",
+  "public_display_allowed": true,
+  "external_vlm_allowed": true,
+  "claim_boundary": "Public static fallback over generated adult-silhouette footage only. This is a UI and artifact-shape demonstration, not clinical validation or target-domain proof.",
+  "generated_at": "2026-05-24T00:00:00Z"
+ },
+ "candidate_filter": {
+  "session_id": "static_robust_motion",
+  "selected_chunk_ids": [
+   "static_robust_motion_chunk_00002",
+   "static_robust_motion_chunk_00003"
+  ],
+  "fallback_applied": false,
+  "selected_fraction": 0.25,
+  "candidate_runs": [
+   {
+    "run_id": "static_robust_motion_candrun_001",
     "session_id": "static_robust_motion",
-    "selected_chunk_ids": [
-      "static_robust_motion_chunk_00002",
-      "static_robust_motion_chunk_00003"
-    ],
-    "fallback_applied": false,
-    "selected_fraction": 0.25,
-    "candidate_runs": [
-      {
-        "run_id": "static_robust_motion_candrun_001",
-        "session_id": "static_robust_motion",
-        "start_time_sec": 2,
-        "end_time_sec": 5,
-        "chunk_ids": [
-          "static_robust_motion_chunk_00002",
-          "static_robust_motion_chunk_00003"
-        ]
-      }
+    "start_time_sec": 2,
+    "end_time_sec": 5,
+    "chunk_ids": [
+     "static_robust_motion_chunk_00002",
+     "static_robust_motion_chunk_00003"
     ]
-  },
-  "chunks": [
-    {
-      "chunk_id": "static_robust_motion_chunk_00000",
-      "start_time_sec": 0,
-      "end_time_sec": 2,
-      "selected": false,
-      "motion_energy": 0.018,
-      "periodicity_strength": 0.04,
-      "subject_motion_energy": 0.012,
-      "bbox_trajectory_periodicity_strength": 0.11,
-      "predicted_label": "none",
-      "confidence": 0.7,
-      "truth_label": "none",
-      "routing_reasons": [
-        "below_thresholds"
-      ]
-    },
-    {
-      "chunk_id": "static_robust_motion_chunk_00001",
-      "start_time_sec": 1,
-      "end_time_sec": 3,
-      "selected": false,
-      "motion_energy": 0.044,
-      "periodicity_strength": 0.09,
-      "subject_motion_energy": 0.038,
-      "bbox_trajectory_periodicity_strength": 0.26,
-      "predicted_label": "none",
-      "confidence": 0.7,
-      "truth_label": "none",
-      "routing_reasons": [
-        "below_thresholds"
-      ]
-    },
-    {
-      "chunk_id": "static_robust_motion_chunk_00002",
-      "start_time_sec": 2,
-      "end_time_sec": 4,
-      "selected": true,
-      "motion_energy": 0.198,
-      "periodicity_strength": 0.48,
-      "subject_motion_energy": 0.184,
-      "bbox_trajectory_periodicity_strength": 0.86,
-      "predicted_label": "other_repetitive",
-      "confidence": 0.78,
-      "truth_label": "other_repetitive",
-      "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
-      "routing_reasons": [
-        "bbox_trajectory_periodicity_strength>=0.350",
-        "context_expansion"
-      ]
-    },
-    {
-      "chunk_id": "static_robust_motion_chunk_00003",
-      "start_time_sec": 3,
-      "end_time_sec": 5,
-      "selected": true,
-      "motion_energy": 0.213,
-      "periodicity_strength": 0.52,
-      "subject_motion_energy": 0.191,
-      "bbox_trajectory_periodicity_strength": 0.93,
-      "predicted_label": "other_repetitive",
-      "confidence": 0.82,
-      "truth_label": "other_repetitive",
-      "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
-      "routing_reasons": [
-        "bbox_trajectory_periodicity_strength>=0.350"
-      ]
-    },
-    {
-      "chunk_id": "static_robust_motion_chunk_00004",
-      "start_time_sec": 4,
-      "end_time_sec": 6,
-      "selected": false,
-      "motion_energy": 0.082,
-      "periodicity_strength": 0.16,
-      "subject_motion_energy": 0.061,
-      "bbox_trajectory_periodicity_strength": 0.31,
-      "predicted_label": "none",
-      "confidence": 0.7,
-      "truth_label": "other_repetitive",
-      "routing_reasons": [
-        "below_thresholds"
-      ]
-    },
-    {
-      "chunk_id": "static_robust_motion_chunk_00005",
-      "start_time_sec": 5,
-      "end_time_sec": 7,
-      "selected": false,
-      "motion_energy": 0.026,
-      "periodicity_strength": 0.05,
-      "subject_motion_energy": 0.021,
-      "bbox_trajectory_periodicity_strength": 0.18,
-      "predicted_label": "none",
-      "confidence": 0.7,
-      "truth_label": "none",
-      "routing_reasons": [
-        "below_thresholds"
-      ]
-    },
-    {
-      "chunk_id": "static_robust_motion_chunk_00006",
-      "start_time_sec": 6,
-      "end_time_sec": 8,
-      "selected": false,
-      "motion_energy": 0.016,
-      "periodicity_strength": 0.03,
-      "subject_motion_energy": 0.014,
-      "bbox_trajectory_periodicity_strength": 0.1,
-      "predicted_label": "none",
-      "confidence": 0.7,
-      "truth_label": "none",
-      "routing_reasons": [
-        "below_thresholds"
-      ]
-    },
-    {
-      "chunk_id": "static_robust_motion_chunk_00007",
-      "start_time_sec": 7,
-      "end_time_sec": 8,
-      "selected": false,
-      "motion_energy": 0.01,
-      "periodicity_strength": 0.02,
-      "subject_motion_energy": 0.01,
-      "bbox_trajectory_periodicity_strength": 0.07,
-      "predicted_label": "none",
-      "confidence": 0.7,
-      "truth_label": "none",
-      "routing_reasons": [
-        "below_thresholds"
-      ]
-    }
-  ],
-  "selected_clips": [
-    {
-      "chunk_id": "static_robust_motion_chunk_00002",
-      "start_time_sec": 2,
-      "end_time_sec": 4,
-      "selected": true,
-      "motion_energy": 0.198,
-      "periodicity_strength": 0.48,
-      "subject_motion_energy": 0.184,
-      "bbox_trajectory_periodicity_strength": 0.86,
-      "predicted_label": "other_repetitive",
-      "label": "other_repetitive",
-      "confidence": 0.78,
-      "truth_label": "other_repetitive",
-      "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
-      "routing_reasons": [
-        "bbox_trajectory_periodicity_strength>=0.350",
-        "context_expansion"
-      ],
-      "cost_usd": 0,
-      "composite": {
-        "id": "static-demo-composite-00002",
-        "chunk_id": "static_robust_motion_chunk_00002",
-        "strategy": "static_demo_sequence",
-        "source_frame_indices": [
-          10,
-          14,
-          18,
-          22,
-          26,
-          30
-        ],
-        "image_url": "assets/static_demo_composite.svg"
-      },
-      "observation": {
-        "id": "static-demo-observation-00002",
-        "composite_id": "static-demo-composite-00002",
-        "label": "other_repetitive",
-        "confidence": 0.78,
-        "evidence": "Synthetic subject proxy shows repeated horizontal oscillation across the selected window.",
-        "cost_usd": 0,
-        "latency_ms": 1,
-        "model_id": "static-demo-mock"
-      }
-    },
-    {
-      "chunk_id": "static_robust_motion_chunk_00003",
-      "start_time_sec": 3,
-      "end_time_sec": 5,
-      "selected": true,
-      "motion_energy": 0.213,
-      "periodicity_strength": 0.52,
-      "subject_motion_energy": 0.191,
-      "bbox_trajectory_periodicity_strength": 0.93,
-      "predicted_label": "other_repetitive",
-      "label": "other_repetitive",
-      "confidence": 0.82,
-      "truth_label": "other_repetitive",
-      "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
-      "routing_reasons": [
-        "bbox_trajectory_periodicity_strength>=0.350"
-      ],
-      "cost_usd": 0,
-      "composite": {
-        "id": "static-demo-composite-00003",
-        "chunk_id": "static_robust_motion_chunk_00003",
-        "strategy": "static_demo_sequence",
-        "source_frame_indices": [
-          15,
-          19,
-          23,
-          27,
-          31,
-          35
-        ],
-        "image_url": "assets/static_demo_composite.svg"
-      },
-      "observation": {
-        "id": "static-demo-observation-00003",
-        "composite_id": "static-demo-composite-00003",
-        "label": "other_repetitive",
-        "confidence": 0.82,
-        "evidence": "The strongest motion window repeats the same proxy movement pattern with clear periodicity.",
-        "cost_usd": 0,
-        "latency_ms": 1,
-        "model_id": "static-demo-mock"
-      }
-    }
-  ],
-  "composites": [
-    {
-      "id": "static-demo-composite-00002",
-      "chunk_id": "static_robust_motion_chunk_00002",
-      "strategy": "static_demo_sequence",
-      "source_frame_indices": [
-        10,
-        14,
-        18,
-        22,
-        26,
-        30
-      ],
-      "image_url": "assets/static_demo_composite.svg"
-    },
-    {
-      "id": "static-demo-composite-00003",
-      "chunk_id": "static_robust_motion_chunk_00003",
-      "strategy": "static_demo_sequence",
-      "source_frame_indices": [
-        15,
-        19,
-        23,
-        27,
-        31,
-        35
-      ],
-      "image_url": "assets/static_demo_composite.svg"
-    }
-  ],
-  "observations": [
-    {
-      "id": "static-demo-observation-00002",
-      "composite_id": "static-demo-composite-00002",
-      "label": "other_repetitive",
-      "confidence": 0.78,
-      "evidence": "Synthetic subject proxy shows repeated horizontal oscillation across the selected window.",
-      "cost_usd": 0,
-      "latency_ms": 1,
-      "model_id": "static-demo-mock"
-    },
-    {
-      "id": "static-demo-observation-00003",
-      "composite_id": "static-demo-composite-00003",
-      "label": "other_repetitive",
-      "confidence": 0.82,
-      "evidence": "The strongest motion window repeats the same proxy movement pattern with clear periodicity.",
-      "cost_usd": 0,
-      "latency_ms": 1,
-      "model_id": "static-demo-mock"
-    }
-  ],
-  "timeline": {
-    "truth_segments": [
-      {
-        "label": "other_repetitive",
-        "start_time_sec": 2,
-        "end_time_sec": 5
-      }
-    ],
-    "decoded_segments": [
-      {
-        "label": "other_repetitive",
-        "start_time_sec": 2,
-        "end_time_sec": 5
-      }
-    ]
-  },
-  "episodes": [
-    {
-      "candidate_id": "static_robust_motion_cand_00001",
-      "session_id": "static_robust_motion",
-      "start_time_sec": 2,
-      "end_time_sec": 5,
-      "label": "other_repetitive",
-      "per_chunk_observations": [
-        "static-demo-observation-00002",
-        "static-demo-observation-00003"
-      ],
-      "hmm_confidence": 0.84
-    }
-  ],
-  "warnings": [
-    "Static public demo: live runs, uploads, and backend persistence are disabled."
+   }
   ]
+ },
+ "chunks": [
+  {
+   "chunk_id": "static_robust_motion_chunk_00000",
+   "start_time_sec": 0,
+   "end_time_sec": 2,
+   "selected": false,
+   "motion_energy": 0.018,
+   "periodicity_strength": 0.04,
+   "subject_motion_energy": 0.012,
+   "bbox_trajectory_periodicity_strength": 0.11,
+   "predicted_label": "none",
+   "confidence": 0.7,
+   "truth_label": "none",
+   "routing_reasons": [
+    "below_thresholds"
+   ]
+  },
+  {
+   "chunk_id": "static_robust_motion_chunk_00001",
+   "start_time_sec": 1,
+   "end_time_sec": 3,
+   "selected": false,
+   "motion_energy": 0.044,
+   "periodicity_strength": 0.09,
+   "subject_motion_energy": 0.038,
+   "bbox_trajectory_periodicity_strength": 0.26,
+   "predicted_label": "none",
+   "confidence": 0.7,
+   "truth_label": "none",
+   "routing_reasons": [
+    "below_thresholds"
+   ]
+  },
+  {
+   "chunk_id": "static_robust_motion_chunk_00002",
+   "start_time_sec": 2,
+   "end_time_sec": 4,
+   "selected": true,
+   "motion_energy": 0.198,
+   "periodicity_strength": 0.48,
+   "subject_motion_energy": 0.184,
+   "bbox_trajectory_periodicity_strength": 0.86,
+   "predicted_label": "other_repetitive",
+   "confidence": 0.78,
+   "truth_label": "other_repetitive",
+   "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
+   "routing_reasons": [
+    "bbox_trajectory_periodicity_strength>=0.350",
+    "context_expansion"
+   ]
+  },
+  {
+   "chunk_id": "static_robust_motion_chunk_00003",
+   "start_time_sec": 3,
+   "end_time_sec": 5,
+   "selected": true,
+   "motion_energy": 0.213,
+   "periodicity_strength": 0.52,
+   "subject_motion_energy": 0.191,
+   "bbox_trajectory_periodicity_strength": 0.93,
+   "predicted_label": "other_repetitive",
+   "confidence": 0.82,
+   "truth_label": "other_repetitive",
+   "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
+   "routing_reasons": [
+    "bbox_trajectory_periodicity_strength>=0.350"
+   ]
+  },
+  {
+   "chunk_id": "static_robust_motion_chunk_00004",
+   "start_time_sec": 4,
+   "end_time_sec": 6,
+   "selected": false,
+   "motion_energy": 0.082,
+   "periodicity_strength": 0.16,
+   "subject_motion_energy": 0.061,
+   "bbox_trajectory_periodicity_strength": 0.31,
+   "predicted_label": "none",
+   "confidence": 0.7,
+   "truth_label": "other_repetitive",
+   "routing_reasons": [
+    "below_thresholds"
+   ]
+  },
+  {
+   "chunk_id": "static_robust_motion_chunk_00005",
+   "start_time_sec": 5,
+   "end_time_sec": 7,
+   "selected": false,
+   "motion_energy": 0.026,
+   "periodicity_strength": 0.05,
+   "subject_motion_energy": 0.021,
+   "bbox_trajectory_periodicity_strength": 0.18,
+   "predicted_label": "none",
+   "confidence": 0.7,
+   "truth_label": "none",
+   "routing_reasons": [
+    "below_thresholds"
+   ]
+  },
+  {
+   "chunk_id": "static_robust_motion_chunk_00006",
+   "start_time_sec": 6,
+   "end_time_sec": 8,
+   "selected": false,
+   "motion_energy": 0.016,
+   "periodicity_strength": 0.03,
+   "subject_motion_energy": 0.014,
+   "bbox_trajectory_periodicity_strength": 0.1,
+   "predicted_label": "none",
+   "confidence": 0.7,
+   "truth_label": "none",
+   "routing_reasons": [
+    "below_thresholds"
+   ]
+  },
+  {
+   "chunk_id": "static_robust_motion_chunk_00007",
+   "start_time_sec": 7,
+   "end_time_sec": 8,
+   "selected": false,
+   "motion_energy": 0.01,
+   "periodicity_strength": 0.02,
+   "subject_motion_energy": 0.01,
+   "bbox_trajectory_periodicity_strength": 0.07,
+   "predicted_label": "none",
+   "confidence": 0.7,
+   "truth_label": "none",
+   "routing_reasons": [
+    "below_thresholds"
+   ]
+  }
+ ],
+ "selected_clips": [
+  {
+   "chunk_id": "static_robust_motion_chunk_00002",
+   "start_time_sec": 2,
+   "end_time_sec": 4,
+   "selected": true,
+   "motion_energy": 0.198,
+   "periodicity_strength": 0.48,
+   "subject_motion_energy": 0.184,
+   "bbox_trajectory_periodicity_strength": 0.86,
+   "predicted_label": "other_repetitive",
+   "label": "other_repetitive",
+   "confidence": 0.78,
+   "truth_label": "other_repetitive",
+   "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
+   "routing_reasons": [
+    "bbox_trajectory_periodicity_strength>=0.350",
+    "context_expansion"
+   ],
+   "cost_usd": 0,
+   "composite": {
+    "id": "static-demo-composite-00002",
+    "chunk_id": "static_robust_motion_chunk_00002",
+    "strategy": "static_demo_sequence",
+    "source_frame_indices": [
+     10,
+     14,
+     18,
+     22,
+     26,
+     30
+    ],
+    "image_url": "assets/static_demo_composite.svg"
+   },
+   "observation": {
+    "id": "static-demo-observation-00002",
+    "composite_id": "static-demo-composite-00002",
+    "label": "other_repetitive",
+    "confidence": 0.78,
+    "evidence": "Synthetic subject proxy shows repeated horizontal oscillation across the selected window.",
+    "cost_usd": 0,
+    "latency_ms": 1,
+    "model_id": "static-demo-mock"
+   }
+  },
+  {
+   "chunk_id": "static_robust_motion_chunk_00003",
+   "start_time_sec": 3,
+   "end_time_sec": 5,
+   "selected": true,
+   "motion_energy": 0.213,
+   "periodicity_strength": 0.52,
+   "subject_motion_energy": 0.191,
+   "bbox_trajectory_periodicity_strength": 0.93,
+   "predicted_label": "other_repetitive",
+   "label": "other_repetitive",
+   "confidence": 0.82,
+   "truth_label": "other_repetitive",
+   "clip_url": "assets/realistic_adult_repetitive_motion.mp4",
+   "routing_reasons": [
+    "bbox_trajectory_periodicity_strength>=0.350"
+   ],
+   "cost_usd": 0,
+   "composite": {
+    "id": "static-demo-composite-00003",
+    "chunk_id": "static_robust_motion_chunk_00003",
+    "strategy": "static_demo_sequence",
+    "source_frame_indices": [
+     15,
+     19,
+     23,
+     27,
+     31,
+     35
+    ],
+    "image_url": "assets/static_demo_composite.svg"
+   },
+   "observation": {
+    "id": "static-demo-observation-00003",
+    "composite_id": "static-demo-composite-00003",
+    "label": "other_repetitive",
+    "confidence": 0.82,
+    "evidence": "The strongest motion window repeats the same proxy movement pattern with clear periodicity.",
+    "cost_usd": 0,
+    "latency_ms": 1,
+    "model_id": "static-demo-mock"
+   }
+  }
+ ],
+ "composites": [
+  {
+   "id": "static-demo-composite-00002",
+   "chunk_id": "static_robust_motion_chunk_00002",
+   "strategy": "static_demo_sequence",
+   "source_frame_indices": [
+    10,
+    14,
+    18,
+    22,
+    26,
+    30
+   ],
+   "image_url": "assets/static_demo_composite.svg"
+  },
+  {
+   "id": "static-demo-composite-00003",
+   "chunk_id": "static_robust_motion_chunk_00003",
+   "strategy": "static_demo_sequence",
+   "source_frame_indices": [
+    15,
+    19,
+    23,
+    27,
+    31,
+    35
+   ],
+   "image_url": "assets/static_demo_composite.svg"
+  }
+ ],
+ "observations": [
+  {
+   "id": "static-demo-observation-00002",
+   "composite_id": "static-demo-composite-00002",
+   "label": "other_repetitive",
+   "confidence": 0.78,
+   "evidence": "Synthetic subject proxy shows repeated horizontal oscillation across the selected window.",
+   "cost_usd": 0,
+   "latency_ms": 1,
+   "model_id": "static-demo-mock"
+  },
+  {
+   "id": "static-demo-observation-00003",
+   "composite_id": "static-demo-composite-00003",
+   "label": "other_repetitive",
+   "confidence": 0.82,
+   "evidence": "The strongest motion window repeats the same proxy movement pattern with clear periodicity.",
+   "cost_usd": 0,
+   "latency_ms": 1,
+   "model_id": "static-demo-mock"
+  }
+ ],
+ "timeline": {
+  "truth_segments": [
+   {
+    "label": "other_repetitive",
+    "start_time_sec": 2,
+    "end_time_sec": 5
+   }
+  ],
+  "decoded_segments": [
+   {
+    "label": "other_repetitive",
+    "start_time_sec": 2,
+    "end_time_sec": 5
+   }
+  ]
+ },
+ "episodes": [
+  {
+   "candidate_id": "static_robust_motion_cand_00001",
+   "session_id": "static_robust_motion",
+   "start_time_sec": 2,
+   "end_time_sec": 5,
+   "label": "other_repetitive",
+   "per_chunk_observations": [
+    "static-demo-observation-00002",
+    "static-demo-observation-00003"
+   ],
+   "hmm_confidence": 0.84
+  }
+ ],
+ "warnings": [
+  "Static public demo: live runs, uploads, and backend persistence are disabled."
+ ]
 }
